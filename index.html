@@ -5,20 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Solvent Network Solutions — Empowering Secure Connections</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@400;500;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Work+Sans:wght@400;500;600;700&display=swap');
 
   :root {
     --navy: #0B2A6B;
     --navy-dark: #071C4D;
     --cyan: #29B6F6;
     --cyan-pale: #8AD8FA;
-    --gold: #C9A227;
+    --gold: #0A8FA3; /* Replaced gold with a deep teal to match infographics */
     --ink: #17191C;
-    --bg: #F4F1EA;        /* warm cream page background, as requested */
+    --bg: #F4FAFF;        /* cool icy blue background */
     --header-bg: #0B2A6B; /* distinct header color, separate from page bg */
     --card: #FFFFFF;
     --muted: #55606E;
-    --line: #E3DED2;
+    --line: #D9EEFA;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -28,7 +28,7 @@
     color: var(--ink);
     overflow-x: hidden;
   }
-  h1, h2, h3 { font-family: 'Archivo Black', sans-serif; text-transform: uppercase; letter-spacing: 0.01em; }
+  h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 800; letter-spacing: -0.01em; }
   a { color: inherit; text-decoration: none; }
 
   /* ================= NAV — distinct navy header ================= */
@@ -48,7 +48,7 @@
   }
   .logo-badge svg { width: 26px; height: 26px; }
   .logo-text { line-height: 1.05; }
-  .logo-text .l1 { font-family: 'Archivo Black', sans-serif; font-size: 1.05rem; color: #fff; }
+  .logo-text .l1 { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 1.05rem; color: #fff; }
   .logo-text .l2 { font-size: 0.6rem; letter-spacing: 0.15em; color: var(--cyan-pale); font-weight: 600; }
   nav .links { display: flex; gap: 32px; font-weight: 600; font-size: 0.9rem; }
   nav .links a { color: #fff; opacity: 0.8; }
@@ -63,9 +63,14 @@
     position: relative;
     padding: 90px 6vw 110px;
     overflow: hidden;
-    background: linear-gradient(180deg, #FAF7F0 0%, var(--bg) 100%);
+    background-color: #ffffff;
+    background-image: 
+      linear-gradient(rgba(41, 182, 246, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(41, 182, 246, 0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
   }
-  .shard-field { position: absolute; top: 0; right: 0; width: 60vw; height: 100%; z-index: 0; }
+  .info-wave { position: absolute; top: 0; left: 0; width: 45vw; max-width: 600px; height: auto; z-index: 0; }
+  .info-dots { position: absolute; top: 30px; right: 5vw; width: 120px; z-index: 0; opacity: 0.5; }
   .hero-content { position: relative; z-index: 2; max-width: 620px; }
   .eyebrow {
     display: inline-block; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.08em;
@@ -151,6 +156,89 @@
   .extra-card h4 { font-family: 'Work Sans', sans-serif; font-weight: 700; font-size: 0.98rem; color: var(--navy); margin-bottom: 4px; text-transform: none; }
   .extra-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.4; }
 
+  /* ================= VISUAL SOLUTIONS ================= */
+  .visual-solutions { padding: 70px 6vw; background: var(--bg); }
+  .visual-grid { 
+    max-width: 1000px; 
+    margin: 0 auto; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 40px; 
+  }
+  .visual-grid img { 
+    width: 100%; 
+    height: auto; 
+    border-radius: 16px; 
+    box-shadow: 0 12px 32px rgba(11, 42, 107, 0.08); 
+    border: 1px solid var(--line);
+    transition: transform 0.3s ease;
+  }
+  .visual-grid img:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(11, 42, 107, 0.12);
+  }
+  
+  .build-section { margin-bottom: 30px; }
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  .cards-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 6px 16px rgba(11, 42, 107, 0.06);
+  }
+
+  
+  .text-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+  .text-card {
+    background: #ffffff;
+    padding: 30px 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(11, 42, 107, 0.04);
+    border: 1px solid rgba(11, 42, 107, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .text-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(11, 42, 107, 0.12);
+  }
+  .text-card h4 {
+    color: var(--navy);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .text-card h4 i {
+    color: var(--cyan);
+    background: rgba(41, 182, 246, 0.1);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+  .text-card p {
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
   /* ================= TESTIMONIALS (added from live-site build) ================= */
   .testimonials { padding: 70px 6vw; background: var(--card); }
   .testi-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
@@ -161,7 +249,7 @@
   /* ================= CLIENTS / ALLIANCES (added) ================= */
   .logo-strip { padding: 60px 6vw; background: var(--bg); }
   .logo-row { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 22px; align-items: center; justify-content: center; }
-  .logo-row img { height: 50px; max-width: 130px; object-fit: contain; filter: grayscale(15%); opacity: 0.9; }
+  .logo-row img { height: 65px; max-width: 170px; object-fit: contain; filter: grayscale(15%); opacity: 0.9; }
 
   /* ================= ABOUT / JOURNEY (added) ================= */
   .about { padding: 70px 6vw; background: var(--card); }
@@ -169,7 +257,7 @@
   .about-grid p { color: var(--muted); line-height: 1.65; margin-bottom: 16px; }
   .timeline { display: flex; flex-direction: column; gap: 18px; }
   .tl-item { display: flex; gap: 16px; align-items: flex-start; }
-  .tl-year { font-family: 'Archivo Black', sans-serif; color: var(--gold); font-size: 1.2rem; width: 70px; flex-shrink: 0; }
+  .tl-year { font-family: 'Montserrat', sans-serif; font-weight: 800; color: var(--gold); font-size: 1.2rem; width: 70px; flex-shrink: 0; }
   .tl-desc { color: var(--ink); font-weight: 600; font-size: 0.95rem; padding-top: 4px; }
   @media (max-width: 760px) { .about-grid { grid-template-columns: 1fr; } }
 
@@ -242,6 +330,7 @@
   .reveal-stagger.is-visible { transition-delay: var(--stagger-delay, 0s); }
   @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
 </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
@@ -268,15 +357,20 @@
 
 <!-- ================= HERO ================= -->
 <section class="hero">
-  <svg class="shard-field" viewBox="0 0 600 700" preserveAspectRatio="xMaxYMin slice">
-    <polygon points="420,0 600,0 600,160 500,260" fill="#0B2A6B"/>
-    <polygon points="600,160 600,340 480,340 420,260" fill="var(--cyan)"/>
-    <polygon points="320,260 420,260 480,340 380,420" fill="var(--cyan-pale)"/>
-    <polygon points="480,340 600,340 600,520 500,520" fill="#0B2A6B"/>
-    <polygon points="380,420 480,420 500,520 400,600" fill="var(--cyan)"/>
+  <!-- Decorative Top-Left Wave -->
+  <svg class="info-wave" viewBox="0 0 500 500" preserveAspectRatio="none">
+    <path d="M0,0 L500,0 C350,150 150,300 0,500 Z" fill="var(--cyan-pale)" opacity="0.3"/>
+    <path d="M0,0 L350,0 C200,100 100,250 0,400 Z" fill="var(--cyan)"/>
+    <path d="M0,0 L200,0 C100,50 50,150 0,250 Z" fill="var(--navy)"/>
+  </svg>
+  <!-- Decorative Top-Right Dots -->
+  <svg class="info-dots" viewBox="0 0 100 100">
+    <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle fill="var(--cyan)" cx="10" cy="10" r="3"></circle>
+    </pattern>
+    <rect x="0" y="0" width="100" height="100" fill="url(#dots)"></rect>
   </svg>
   <div class="hero-content reveal">
-    <div class="eyebrow">SHIVAMOGA, KA, IN.</div>
     <h1>Solvent Network Solutions</h1>
     <p class="tagline">One stop destination for empowering secure connections over your network services.</p>
     <div class="hero-ctas">
@@ -366,24 +460,371 @@
   <div class="extra-grid">
     <div class="extra-card reveal reveal-stagger" style="--stagger-delay: 0.00s">
       <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.8"><rect x="4" y="4" width="16" height="6" rx="1.5"/><rect x="4" y="14" width="16" height="6" rx="1.5"/><circle cx="8" cy="7" r="0.6" fill="var(--navy)"/><circle cx="8" cy="17" r="0.6" fill="var(--navy)"/></svg></div>
-      <div><h4>Servers &amp; Active Directory</h4><p>Servers, storage, virtualization &amp; IT infrastructure management.</p></div>
+      <div><h4><i class="fa-solid fa-check-circle"></i> Servers &amp; Active Directory</h4><p>Servers, storage, virtualization &amp; IT infrastructure management.</p></div>
     </div>
     <div class="extra-card reveal reveal-stagger" style="--stagger-delay: 0.08s">
       <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.8"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
-      <div><h4>Backup &amp; Disaster Recovery</h4><p>Data protection, business continuity &amp; recovery solutions.</p></div>
+      <div><h4><i class="fa-solid fa-check-circle"></i> Backup &amp; Disaster Recovery</h4><p>Data protection, business continuity &amp; recovery solutions.</p></div>
     </div>
     <div class="extra-card reveal reveal-stagger" style="--stagger-delay: 0.16s">
       <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.8"><rect x="3" y="6" width="13" height="9" rx="1.5"/><path d="M16 9.5l5-2.5v9l-5-2.5"/></svg></div>
-      <div><h4>CCTV &amp; IP Surveillance</h4><p>CCTV, NVR &amp; integrated security infrastructure.</p></div>
+      <div><h4><i class="fa-solid fa-check-circle"></i> CCTV &amp; IP Surveillance</h4><p>CCTV, NVR &amp; integrated security infrastructure.</p></div>
     </div>
     <div class="extra-card reveal reveal-stagger" style="--stagger-delay: 0.24s">
       <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.8"><rect x="4" y="9" width="16" height="11" rx="1"/><path d="M8 9V6a4 4 0 018 0v3"/><path d="M9 4h6"/></svg></div>
-      <div><h4>Banking IT Solutions</h4><p>Specialized IT infrastructure &amp; technology solutions for financial institutions.</p></div>
+      <div><h4><i class="fa-solid fa-check-circle"></i> Banking IT Solutions</h4><p>Specialized IT infrastructure &amp; technology solutions for financial institutions.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ================= TESTIMONIALS (from live site) ================= -->
+<!-- ================= VISUAL SOLUTIONS ================= -->
+<section class="visual-solutions" id="visual-solutions">
+  <div class="section-head reveal">
+    <div class="eyebrow" style="color:var(--navy); border-color:var(--navy);">VISUAL GUIDES</div>
+    <h2 style="color:var(--navy); font-size:clamp(1.6rem,3vw,2.1rem);">Our Solutions Visualized</h2>
+    <p style="color:var(--muted);">Explore our comprehensive networking and security architectures.</p>
+  </div>
+  <div class="visual-text-solutions" style="padding-top: 40px;">
+
+    <div class="build-section reveal reveal-stagger" style="margin-top: 60px;">
+      <h3 style="text-align: center; color: var(--navy); margin-bottom: 8px; font-size: 2rem; text-transform: uppercase;">What We Build</h3>
+      <p style="text-align: center; color: var(--cyan); margin-bottom: 32px; font-weight: 600; font-size: 1.1rem; letter-spacing: 1px;">IT Infrastructure Foundation</p>
+      <div class="text-cards-grid">
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-network-wired"></i> Clean Cabling</h4>
+          <p>Neat, labeled cabling for zero clutter and maximum reliability.</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-server"></i> Fast Switching</h4>
+          <p>Right-sized switches built for high-speed connectivity.</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-database"></i> Strong Servers</h4>
+          <p>Powerful servers built to handle your critical workloads.</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-hard-drive"></i> Safe Storage</h4>
+          <p>Centralized backup storage you can trust.</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-plug"></i> Power Backup</h4>
+          <p>UPS and power backup that keeps your business running.</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-gauge-high"></i> Speed Tuned</h4>
+          <p>Optimized network and systems for real performance.</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-wrench"></i> Quick On-Site Help</h4>
+          <p>On-site support with ready maps, docs and diagnostics.</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-wifi"></i> Always Connected</h4>
+          <p>Multi-WAN failover keeps your internet always on.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="build-section reveal reveal-stagger" style="margin-top: 60px;">
+      <h3 style="text-align: center; color: var(--navy); margin-bottom: 8px; font-size: 2rem; text-transform: uppercase;">What We Deliver</h3>
+      <p style="text-align: center; color: var(--cyan); margin-bottom: 32px; font-weight: 600; font-size: 1.1rem; letter-spacing: 1px;">Complete Networking Made Simple</p>
+      <div class="text-cards-grid">
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-globe"></i> Always-On Internet</h4>
+          <p>24/7 leased line internet for reliable connectivity</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-wifi"></i> Wi-Fi Everywhere</h4>
+          <p>Seamless office-wide Wi-Fi coverage</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-shield-halved"></i> Secure Gateway</h4>
+          <p>Enterprise firewall protection and secure gateway</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-building"></i> OfficeLink Network</h4>
+          <p>Secure WAN link connecting multiple offices</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-user-shield"></i> TeamVPN Access</h4>
+          <p>Secure VPN connection for remote teams</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-scale-balanced"></i> Fair Speed For All</h4>
+          <p>Bandwidth management ensures fair balanced speed</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-folder-tree"></i> Central File Hub</h4>
+          <p>Central NAS server for secure file storage</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-desktop"></i> Live Network View</h4>
+          <p>Real-time network monitoring and map-based status view</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-headset"></i> Care and Support</h4>
+          <p>AMC and on-site support technician services</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-layer-group"></i> Future-Ready Design</h4>
+          <p>Scalable network designed for future growth</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="build-section reveal reveal-stagger" style="margin-top: 60px;">
+      <h3 style="text-align: center; color: var(--navy); margin-bottom: 8px; font-size: 2rem; text-transform: uppercase;">Enterprise Wireless</h3>
+      <p style="text-align: center; color: var(--cyan); margin-bottom: 32px; font-weight: 600; font-size: 1.1rem; letter-spacing: 1px;">Fast, Secure Wi-Fi Everywhere</p>
+      <div class="text-cards-grid">
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-tower-broadcast"></i> Full Coverage</h4>
+          <p>No dead zones in your workplace with complete coverage</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-users"></i> Guest Wi-Fi</h4>
+          <p>Separate safe access for visitors and guests</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-person-running"></i> Fast Roaming</h4>
+          <p>Move freely without dropping connection</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-sliders"></i> User Control</h4>
+          <p>Decide who can access what on your network</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-people-group"></i> High Density Ready</h4>
+          <p>Handles hundreds of users at once without lag</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-lock"></i> Secure Login</h4>
+          <p>Encrypted and password-protected access</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-gauge"></i> Fair Speed</h4>
+          <p>Bandwidth control ensures fair speed for everyone</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-tree"></i> Outdoor Coverage</h4>
+          <p>Extends Wi-Fi to parking areas and yards</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-chart-pie"></i> One Dashboard</h4>
+          <p>Manage all access points from one central place</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-heart-pulse"></i> Health Check</h4>
+          <p>Continuous signal monitoring and uptime tracking</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="build-section reveal reveal-stagger" style="margin-top: 60px;">
+      <h3 style="text-align: center; color: var(--navy); margin-bottom: 8px; font-size: 2rem; text-transform: uppercase;">What We Protect</h3>
+      <p style="text-align: center; color: var(--cyan); margin-bottom: 32px; font-weight: 600; font-size: 1.1rem; letter-spacing: 1px;">Endpoint Security Made Simple</p>
+      <div class="text-cards-grid">
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-shield-virus"></i> Virus Shield</h4>
+          <p>Real-time protection that blocks viruses instantly</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-usb"></i> Device Control</h4>
+          <p>Controls USB and external device access securely</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-earth-americas"></i> Web Protection</h4>
+          <p>Blocks malicious links and phishing websites</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-file-shield"></i> Ransomware Guard</h4>
+          <p>Stops encryption attacks before they cause damage</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-file-circle-check"></i> Safe Files</h4>
+          <p>Scans downloads and attachments automatically</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-box-archive"></i> App Safety</h4>
+          <p>Prevents risky applications from running</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-lock"></i> Data Lock</h4>
+          <p>Keeps sensitive files encrypted and protected</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-mobile-screen-button"></i> Lost Device Protection</h4>
+          <p>Locks or wipes data remotely if lost</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-download"></i> Patch Updates</h4>
+          <p>Keeps your systems up to date automatically</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-eye"></i> Device Monitoring</h4>
+          <p>Continuous monitoring of all endpoints 24/7</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-chart-line"></i> Performance Check</h4>
+          <p>Monitors system health and performance</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-radar"></i> Threat Monitoring</h4>
+          <p>Detects and blocks threats in real-time</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="build-section reveal reveal-stagger" style="margin-top: 60px;">
+      <h3 style="text-align: center; color: var(--navy); margin-bottom: 8px; font-size: 2rem; text-transform: uppercase;">Firewall & Network Security</h3>
+      <p style="text-align: center; color: var(--cyan); margin-bottom: 32px; font-weight: 600; font-size: 1.1rem; letter-spacing: 1px;">Keep Your Business Safe Online</p>
+      <div class="text-cards-grid">
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-door-closed"></i> Digital Gatekeeper</h4>
+          <p>Controls inbound and outbound traffic to block unwanted access</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-compass"></i> Safe Browsing</h4>
+          <p>Filters harmful sites and malicious links automatically</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-bell"></i> Threat Alerts</h4>
+          <p>Instant alerts for phishing, malware and scam attempts</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-binoculars"></i> Watch for Intruders</h4>
+          <p>Monitor and detect suspicious activity 24/7</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-gauge"></i> Fair Internet Speed</h4>
+          <p>Bandwidth control for fair, consistent speed across all devices</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-globe"></i> Lock Your Website</h4>
+          <p>SSL security and HTTPS to secure your websites</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-wifi"></i> Always Connected</h4>
+          <p>Multi-WAN failover keeps your internet running reliably</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-laptop-house"></i> Secure Remote Work</h4>
+          <p>VPN connection to keep remote work safe and private</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-heart-pulse"></i> Health Check</h4>
+          <p>Continuous monitoring to keep your network healthy and performing</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="build-section reveal reveal-stagger" style="margin-top: 60px;">
+      <h3 style="text-align: center; color: var(--navy); margin-bottom: 8px; font-size: 2rem; text-transform: uppercase;">How We Connect</h3>
+      <p style="text-align: center; color: var(--cyan); margin-bottom: 32px; font-weight: 600; font-size: 1.1rem; letter-spacing: 1px;">Connect Securely From Anywhere</p>
+      <div class="text-cards-grid">
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-tunnel-water"></i> Encrypted Tunnel</h4>
+          <p>Your data travels through a private secure path.</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-briefcase"></i> Remote Office Access</h4>
+          <p>Work as if you are in the office.</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-cloud"></i> Cloud Safe Connect</h4>
+          <p>Secure access to AWS, Azure and Google Cloud.</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-link"></i> Site-to-Site Link</h4>
+          <p>Connects branches together securely.</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-mobile"></i> Multi-Device VPN</h4>
+          <p>Works on laptop, mobile and tablet.</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-user-secret"></i> No Snoop Shield</h4>
+          <p>Hides your activity from hackers and trackers.</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-shield"></i> Always-On Protection</h4>
+          <p>VPN connects automatically for protection.</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-bolt"></i> Fast and Stable</h4>
+          <p>Optimized speed for video calls and files.</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-id-badge"></i> Access Control</h4>
+          <p>Only authorized users can enter.</p>
+        </div>
+
+        <div class="text-card">
+          <h4><i class="fa-solid fa-display"></i> VPN Monitoring</h4>
+          <p>Continuous tracking of uptime and security.</p>
+        </div>
+      </div>
+    </div>
+</div>
+
+  <!-- ================= TESTIMONIALS (from live site) ================= -->
 <section class="testimonials">
   <div class="section-head reveal">
     <div class="eyebrow">TESTIMONIALS</div>
