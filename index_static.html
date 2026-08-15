@@ -50,8 +50,7 @@
   .logo-text { line-height: 1.05; }
   .logo-text .l1 { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 1.05rem; color: #fff; }
   .logo-text .l2 { font-size: 0.6rem; letter-spacing: 0.15em; color: var(--cyan-pale); font-weight: 600; }
-  .logo-text .l3 { font-size: 0.55rem; letter-spacing: 0.05em; color: rgba(255, 255, 255, 0.7); margin-top: 2px; }
-  nav .links { display: flex; gap: 24px; font-weight: 600; font-size: 0.9rem; }
+  nav .links { display: flex; gap: 32px; font-weight: 600; font-size: 0.9rem; }
   nav .links a { color: #fff; opacity: 0.8; }
   nav .links a:hover { opacity: 1; }
   .nav-cta {
@@ -71,8 +70,8 @@
     background-size: 40px 40px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 8vw;
+    justify-content: space-between;
+    gap: 40px;
   }
   .info-wave { position: absolute; top: 0; left: 0; width: 45vw; max-width: 600px; height: auto; z-index: 0; }
   .info-dots { position: absolute; top: 30px; right: 5vw; width: 120px; z-index: 0; opacity: 0.5; }
@@ -86,118 +85,17 @@
     justify-content: center;
     align-items: center;
   }
-  #globe-canvas-container {
+  .hero-image-container img {
     width: 100%;
-    height: 480px;
-    position: relative;
-    cursor: grab;
-    z-index: 5;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 0 60px rgba(41, 182, 246, 0.25);
+    animation: float 6s ease-in-out infinite;
   }
-  #globe-canvas-container:active {
-    cursor: grabbing;
-  }
-  .floating-word {
-    position: absolute;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--cyan);
-    text-shadow: 0 0 8px rgba(41, 182, 246, 0.6);
-    pointer-events: none;
-    z-index: 10;
-    opacity: 0;
-    white-space: nowrap;
-    animation: floatWord 7s ease-in-out forwards;
-  }
-  @keyframes floatWord {
-    0% { opacity: 0; transform: translateY(10px) scale(0.95); }
-    15% { opacity: 1; transform: translateY(0px) scale(1); }
-    85% { opacity: 1; transform: translateY(-15px) scale(1); }
-    100% { opacity: 0; transform: translateY(-25px) scale(0.95); }
-  }
-  @keyframes floatIcon {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-  }
-  .hero-icons-row {
-    position: absolute;
-    bottom: 55px;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 4vw;
-    z-index: 5;
-    padding: 0 4vw;
-  }
-  .hero-icons-row img {
-    height: 65px;
-    width: 65px;
-    object-fit: contain;
-    border-radius: 14px;
-    background: #ffffff;
-    box-shadow: 0 4px 15px rgba(11, 42, 107, 0.08);
-    border: 1px solid rgba(41, 182, 246, 0.15);
-    animation: floatIcon 6s ease-in-out infinite;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .hero-icons-row img:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 8px 25px rgba(11, 42, 107, 0.15);
-    border-color: var(--cyan);
-  }
-  .hero-icons-row img:nth-child(2) { animation-delay: 1s; }
-  .hero-icons-row img:nth-child(3) { animation-delay: 2s; }
-  .hero-icons-row img:nth-child(4) { animation-delay: 3s; }
-  .hero-icons-row img:nth-child(5) { animation-delay: 4s; }
-  @media (max-width: 760px) {
-    .hero-icons-row { bottom: 65px; gap: 3vw; }
-    .hero-icons-row img { height: 45px; width: 45px; border-radius: 10px; }
-  }
-  .tech-ticker-wrap {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    background: var(--navy);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 12px 0;
-    z-index: 10;
-  }
-  .tech-ticker {
-    display: inline-flex;
-    white-space: nowrap;
-    animation: tickerScroll 30s linear infinite;
-  }
-  .tech-ticker-item {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.85);
-    padding: 0 40px;
-    position: relative;
-    letter-spacing: 0.05em;
-  }
-  .tech-ticker-item::after {
-    content: '•';
-    position: absolute;
-    right: 0;
-    font-size: 1.2rem;
-    line-height: 1;
-    transform: translateX(50%);
-  }
-  .tech-ticker-item:nth-child(4n+1)::after { color: #29B6F6; animation: dotBlink 1.5s infinite; }
-  .tech-ticker-item:nth-child(4n+2)::after { color: #25D366; animation: dotBlink 1.8s infinite alternate; }
-  .tech-ticker-item:nth-child(4n+3)::after { color: #FFCC00; animation: dotBlink 2.1s infinite; }
-  .tech-ticker-item:nth-child(4n+4)::after { color: #FF3B30; animation: dotBlink 1.2s infinite alternate; }
-  @keyframes dotBlink {
-    0%, 100% { opacity: 0.2; text-shadow: none; }
-    50% { opacity: 1; text-shadow: 0 0 8px currentColor; }
-  }
-  @keyframes tickerScroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
   }
   .eyebrow {
     display: inline-block; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.08em;
@@ -223,7 +121,7 @@
   .thread-divider svg { width: 100%; height: 100%; }
 
   /* ================= SERVICES ================= */
-  .services { padding: 20px 6vw 30px; background: var(--navy-dark); }
+  .services { padding: 20px 6vw 80px; background: var(--navy-dark); }
   .section-head { text-align: center; max-width: 640px; margin: 0 auto 56px; }
   .section-head .eyebrow { color: var(--cyan-pale); border-color: var(--cyan-pale); }
   .services .section-head h2 { color: #fff; font-size: clamp(1.8rem, 3.5vw, 2.4rem); }
@@ -284,7 +182,7 @@
   .extra-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.4; }
 
   /* ================= VISUAL SOLUTIONS ================= */
-  .visual-solutions { padding: 20px 6vw 70px; background: var(--bg); }
+  .visual-solutions { padding: 70px 6vw; background: var(--bg); }
   .visual-grid { 
     max-width: 1000px; 
     margin: 0 auto; 
@@ -376,11 +274,10 @@
   /* ================= CLIENTS / ALLIANCES (added) ================= */
   .logo-strip { padding: 60px 6vw; background: var(--bg); }
   .logo-row { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 22px; align-items: center; justify-content: center; }
-  .logo-row img { height: 80px; max-width: 210px; object-fit: contain; filter: grayscale(15%); opacity: 0.9; transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease; cursor: pointer; }
-  .logo-row img:hover { transform: scale(1.15); filter: grayscale(0%); opacity: 1; }
+  .logo-row img { height: 65px; max-width: 170px; object-fit: contain; filter: grayscale(15%); opacity: 0.9; }
 
   /* ================= ABOUT / JOURNEY (added) ================= */
-  .about { padding: 70px 6vw; background: var(--bg); border-top: 1px solid rgba(41, 182, 246, 0.1); }
+  .about { padding: 70px 6vw; background: var(--card); }
   .about-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 1fr; gap: 50px; align-items: start; }
   .about-grid p { color: var(--muted); line-height: 1.65; margin-bottom: 16px; }
   .timeline { display: flex; flex-direction: column; gap: 18px; }
@@ -390,7 +287,7 @@
   @media (max-width: 760px) { .about-grid { grid-template-columns: 1fr; } }
 
   /* ================= INDUSTRIES ================= */
-  .industries { padding: 70px 6vw 90px; background: var(--card); border-top: 1px solid rgba(41, 182, 246, 0.1); }
+  .industries { padding: 70px 6vw 90px; background: var(--bg); }
   .industry-grid { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
   .industry-pill {
     display: flex; align-items: center; gap: 12px;
@@ -402,33 +299,27 @@
   .industry-pill .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
 
   /* ================= CONTACT ================= */
-  .contact { 
-    padding: 20px 4vw; 
-    background: var(--navy); 
-    border-top: 2px solid var(--cyan);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 30px;
+  .contact { padding: 90px 6vw 60px; background: var(--navy); position: relative; overflow: hidden; }
+  .contact-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 2; text-align: center; }
+  .contact h2 { color: #fff; font-size: clamp(1.9rem, 4vw, 2.6rem); margin-bottom: 14px; }
+  .contact .lede { color: #C6D2E2; margin-bottom: 40px; font-size: 1.05rem; }
+  .contact-card {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 16px; padding: 32px; display: flex; flex-direction: column; gap: 18px;
+    text-align: left;
   }
-  .contact-title {
-    color: #fff;
-    font-size: 1.1rem;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    letter-spacing: 1px;
+  .contact-row { display: flex; align-items: center; gap: 14px; color: #fff; font-weight: 600; font-size: 1rem; }
+  .contact-row .ic {
+    width: 38px; height: 38px; border-radius: 50%; background: var(--cyan);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
   }
-  .contact-row { display: flex; align-items: center; gap: 10px; color: #C6D2E2; font-weight: 500; font-size: 0.9rem; }
-  .contact-row i { color: var(--cyan); font-size: 1.1rem; }
+  .contact-row .ic svg { width: 18px; height: 18px; }
   .contact-row.email { word-break: break-all; }
-  .contact-row a { color: #C6D2E2; text-decoration: none; transition: color 0.2s, transform 0.2s, text-shadow 0.2s; display: inline-block; }
-  .contact-row a:hover { color: #fff; transform: translateY(-2px) scale(1.02); text-shadow: 0 0 10px rgba(41, 182, 246, 0.6); }
 
-  .promise { width: 100%; text-align: center; margin: 0; color: var(--gold); font-weight: 700; font-size: 1rem; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.05); }
+  .promise { text-align: center; margin: 40px 0 20px; color: var(--gold); font-weight: 700; font-size: 1.05rem; }
   .promise span { color: #fff; }
 
-  footer { text-align: center; padding: 20px 6vw 15px; color: #8A8272; font-size: 0.72rem; line-height: 1.6; background: var(--bg); }
+  footer { text-align: center; padding: 20px 6vw 30px; color: #8A8272; font-size: 0.72rem; line-height: 1.6; background: var(--bg); }
 
   @media (max-width: 900px) {
     .hero { flex-direction: column; text-align: center; }
@@ -468,79 +359,6 @@
   .reveal.is-visible { opacity: 1; transform: translateY(0); }
   .reveal-stagger.is-visible { transition-delay: var(--stagger-delay, 0s); }
   @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
-
-  /* ================= EXPANDABLE WRAPPERS ================= */
-  details.expandable-wrapper {
-    background: transparent;
-    margin: 20px auto 40px;
-    width: 100%;
-    transition: all 0.3s ease;
-  }
-  details.expandable-wrapper > summary {
-    list-style: none;
-    cursor: pointer;
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center;
-    border-bottom: 1px solid rgba(41, 182, 246, 0.2);
-    padding: 16px 20px 16px 0 !important;
-    margin-bottom: 20px;
-    transition: all 0.3s;
-    animation: pulseBorder 3s infinite alternate;
-  }
-  @keyframes pulseBorder {
-    from { border-bottom-color: rgba(41, 182, 246, 0.2); }
-    to { border-bottom-color: rgba(41, 182, 246, 0.5); }
-  }
-  details.expandable-wrapper > summary::-webkit-details-marker {
-    display: none;
-  }
-  details.expandable-wrapper > summary:hover {
-    border-bottom-color: rgba(41, 182, 246, 0.8);
-    background: linear-gradient(to right, rgba(41, 182, 246, 0.05), transparent);
-  }
-  /* Enforce uniform left-alignment for all accordion headers */
-  details.expandable-wrapper > summary > div {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    text-align: left !important;
-  }
-  details.expandable-wrapper > summary > div > h3,
-  details.expandable-wrapper > summary > div > h2,
-  details.expandable-wrapper > summary > div > p {
-    text-align: left !important;
-  }
-  details.expandable-wrapper > summary::after {
-    content: '\f067';
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
-    font-size: 1.4rem;
-    color: var(--cyan);
-    margin-left: 20px;
-    animation: pullBounce 1.5s infinite ease-in-out;
-    display: block;
-  }
-  @keyframes pullBounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(6px); }
-  }
-  details[open].expandable-wrapper > summary::after {
-    transform: rotate(45deg);
-    animation: none;
-  }
-  details[open].expandable-wrapper > summary {
-    animation: none;
-    border-bottom-color: rgba(41, 182, 246, 0.6);
-    background: transparent;
-  }
-  details.expandable-wrapper > .details-content {
-    animation: fadeInDown 0.4s ease-out;
-  }
-  @keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
 </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -556,14 +374,11 @@
     <div class="logo-text">
       <div class="l1">SOLVENT</div>
       <div class="l2">NETWORK SOLUTIONS</div>
-      <div class="l3">Simple protection for every business</div>
     </div>
   </div>
   <div class="links">
     <a href="#services">Services</a>
-    <a href="#clients">Our Clients</a>
-    <a href="#partners">Our Partners</a>
-    <a href="#about">Our Journey</a>
+    <a href="#about">About</a>
     <a href="#industries">Industries</a>
     <a href="#contact">Contact</a>
   </div>
@@ -593,36 +408,25 @@
       <a href="#services" class="btn btn-secondary">See Our Solutions</a>
     </div>
   </div>
-  <div class="hero-image-container" style="--stagger-delay: 0.2s">
-    <div id="globe-canvas-container"></div>
-  </div>
-  <div class="hero-icons-row">
-    <img src="assets/icons/cloud_vpn_1786770655454.png" alt="Cloud VPN">
-    <img src="assets/icons/server_rack_1786770394190.png" alt="Server Rack">
-    <img src="assets/icons/ups_battery_1786770799881.png" alt="UPS Power">
-    <img src="assets/icons/wifi_ap_1786771017990.png" alt="WiFi Access Point">
-    <img src="assets/icons/cctv_camera_1786770747741.png" alt="CCTV Security">
-  </div>
-  <div class="tech-ticker-wrap">
-    <div class="tech-ticker">
-      <span class="tech-ticker-item">Servers</span><span class="tech-ticker-item">Storage</span><span class="tech-ticker-item">VPN</span><span class="tech-ticker-item">File-Hub</span><span class="tech-ticker-item">Remote-Office-Access</span><span class="tech-ticker-item">Secure-Remote-Work</span><span class="tech-ticker-item">Encrypted-Tunnel</span><span class="tech-ticker-item">Access-Control</span><span class="tech-ticker-item">Secure-Login</span><span class="tech-ticker-item">Secure-gateway</span><span class="tech-ticker-item">Safe-Storage</span><span class="tech-ticker-item">Power-backup</span>
-      <span class="tech-ticker-item">Servers</span><span class="tech-ticker-item">Storage</span><span class="tech-ticker-item">VPN</span><span class="tech-ticker-item">File-Hub</span><span class="tech-ticker-item">Remote-Office-Access</span><span class="tech-ticker-item">Secure-Remote-Work</span><span class="tech-ticker-item">Encrypted-Tunnel</span><span class="tech-ticker-item">Access-Control</span><span class="tech-ticker-item">Secure-Login</span><span class="tech-ticker-item">Secure-gateway</span><span class="tech-ticker-item">Safe-Storage</span><span class="tech-ticker-item">Power-backup</span>
-    </div>
+  <div class="hero-image-container reveal reveal-stagger" style="--stagger-delay: 0.2s">
+    <img src="assets/secure-globe.png" alt="Secure Network Globe">
   </div>
 </section>
 
+<div class="thread-divider">
+  <svg viewBox="0 0 1200 90" preserveAspectRatio="none">
+    <path d="M0,45 C150,10 250,80 400,45 C550,10 650,80 800,45 C950,10 1050,80 1200,45" fill="none" stroke="#8AD8FA" stroke-width="1.5" opacity="0.6"/>
+    <path d="M0,55 C150,20 250,90 400,55 C550,20 650,90 800,55 C950,20 1050,90 1200,55" fill="none" stroke="#29B6F6" stroke-width="1.5" opacity="0.4"/>
+  </svg>
+</div>
 
 <!-- ================= SERVICES ================= -->
 <section class="services" id="services">
-  <details class="expandable-wrapper">
-    <summary>
-      <div class="section-head reveal" style="margin-bottom: 0; text-align: left; max-width: none;">
-        <div class="eyebrow">WHAT WE DELIVER</div>
-        <h2 style="margin-bottom: 0;">Full-Spectrum IT Solutions</h2>
-        <p style="margin: 10px 0 0 0;">From perimeter defense to global connectivity — engineered for uncompromising performance.</p>
-      </div>
-    </summary>
-    <div class="details-content">
+  <div class="section-head reveal">
+    <div class="eyebrow">WHAT WE DELIVER</div>
+    <h2>Full-Spectrum IT Solutions</h2>
+    <p>From perimeter defense to global connectivity — engineered for uncompromising performance.</p>
+  </div>
 
   <div class="service-row reveal reveal-stagger" style="--stagger-delay: 0.00s">
     <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--cyan-pale)" stroke-width="1.8"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6l7-3z" stroke-linejoin="round"/></svg></div>
@@ -677,55 +481,47 @@
         <div><span class="label">Value Proposition</span><p>Eradicate infrastructural <strong>blind spots</strong> by enforcing rigorous verification for every digital handshake and fortifying all decentralized <strong>endpoints</strong>.</p></div>
       </div>
     </div>
-    </div>
   </div>
-  </div>
-  </details>
+</section>
 
-  <!-- ================= ADDITIONAL SOLUTIONS ================= -->
-  <details class="expandable-wrapper">
-    <summary>
-      <div class="section-head reveal" style="margin-bottom:0; text-align: left; max-width: none;">
-        <div class="eyebrow">MORE UNDER ONE ROOF</div>
-        <h2 style="font-size:clamp(1.6rem,3vw,2.1rem); margin-bottom: 0;">Additional Solutions</h2>
-      </div>
-    </summary>
-    <div class="details-content">
-      <div class="text-cards-grid" style="max-width: 1080px; margin: 0 auto;">
-        <div class="text-card reveal reveal-stagger" style="--stagger-delay: 0.00s">
-          <h4><i class="fa-solid fa-server"></i> Servers &amp; Active Directory</h4>
-          <p>Servers, storage, virtualization &amp; IT infrastructure management.</p>
-        </div>
-        <div class="text-card reveal reveal-stagger" style="--stagger-delay: 0.08s">
-          <h4><i class="fa-solid fa-hard-drive"></i> Backup &amp; Disaster Recovery</h4>
-          <p>Data protection, business continuity &amp; recovery solutions.</p>
-        </div>
-        <div class="text-card reveal reveal-stagger" style="--stagger-delay: 0.16s">
-          <h4><i class="fa-solid fa-video"></i> CCTV &amp; IP Surveillance</h4>
-          <p>CCTV, NVR &amp; integrated security infrastructure.</p>
-        </div>
-        <div class="text-card reveal reveal-stagger" style="--stagger-delay: 0.24s">
-          <h4><i class="fa-solid fa-building-columns"></i> Banking IT Solutions</h4>
-          <p>Specialized IT infrastructure &amp; technology solutions for financial institutions.</p>
-        </div>
-      </div>
+<!-- ================= ADDITIONAL SOLUTIONS ================= -->
+<section class="extra">
+  <div class="section-head reveal">
+    <div class="eyebrow" style="color:var(--navy); border-color:var(--navy);">MORE UNDER ONE ROOF</div>
+    <h2 style="color:var(--navy); font-size:clamp(1.6rem,3vw,2.1rem);">Additional Solutions</h2>
+  </div>
+  <div class="extra-grid">
+    <div class="extra-card reveal reveal-stagger" style="--stagger-delay: 0.00s">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.8"><rect x="4" y="4" width="16" height="6" rx="1.5"/><rect x="4" y="14" width="16" height="6" rx="1.5"/><circle cx="8" cy="7" r="0.6" fill="var(--navy)"/><circle cx="8" cy="17" r="0.6" fill="var(--navy)"/></svg></div>
+      <div><h4><i class="fa-solid fa-check-circle"></i> Servers &amp; Active Directory</h4><p>Servers, storage, virtualization &amp; IT infrastructure management.</p></div>
     </div>
-  </details>
+    <div class="extra-card reveal reveal-stagger" style="--stagger-delay: 0.08s">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.8"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+      <div><h4><i class="fa-solid fa-check-circle"></i> Backup &amp; Disaster Recovery</h4><p>Data protection, business continuity &amp; recovery solutions.</p></div>
+    </div>
+    <div class="extra-card reveal reveal-stagger" style="--stagger-delay: 0.16s">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.8"><rect x="3" y="6" width="13" height="9" rx="1.5"/><path d="M16 9.5l5-2.5v9l-5-2.5"/></svg></div>
+      <div><h4><i class="fa-solid fa-check-circle"></i> CCTV &amp; IP Surveillance</h4><p>CCTV, NVR &amp; integrated security infrastructure.</p></div>
+    </div>
+    <div class="extra-card reveal reveal-stagger" style="--stagger-delay: 0.24s">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.8"><rect x="4" y="9" width="16" height="11" rx="1"/><path d="M8 9V6a4 4 0 018 0v3"/><path d="M9 4h6"/></svg></div>
+      <div><h4><i class="fa-solid fa-check-circle"></i> Banking IT Solutions</h4><p>Specialized IT infrastructure &amp; technology solutions for financial institutions.</p></div>
+    </div>
+  </div>
 </section>
 
 <!-- ================= VISUAL SOLUTIONS ================= -->
 <section class="visual-solutions" id="visual-solutions">
-  <!-- Visual guides section header text removed as requested -->
-  <div class="visual-text-solutions">
+  <div class="section-head reveal">
+    <div class="eyebrow" style="color:var(--navy); border-color:var(--navy);">VISUAL GUIDES</div>
+    <h2 style="color:var(--navy); font-size:clamp(1.6rem,3vw,2.1rem);">Our Solutions Visualized</h2>
+    <p style="color:var(--muted);">Explore our comprehensive networking and security architectures.</p>
+  </div>
+  <div class="visual-text-solutions" style="padding-top: 40px;">
 
-    <details class="expandable-wrapper">
-      <summary style="justify-content: center; padding: 20px;">
-        <div style="text-align: center;">
-          <h3 style="color: var(--navy); margin-bottom: 8px; font-size: 2rem; text-transform: uppercase;">What We Build</h3>
-          <p style="color: var(--cyan); margin-bottom: 0; font-weight: 600; font-size: 1.1rem; letter-spacing: 1px;">IT Infrastructure Foundation</p>
-        </div>
-      </summary>
-      <div class="details-content">
+    <div class="build-section reveal reveal-stagger" style="margin-top: 60px;">
+      <h3 style="text-align: center; color: var(--navy); margin-bottom: 8px; font-size: 2rem; text-transform: uppercase;">What We Build</h3>
+      <p style="text-align: center; color: var(--cyan); margin-bottom: 32px; font-weight: 600; font-size: 1.1rem; letter-spacing: 1px;">IT Infrastructure Foundation</p>
       <div class="text-cards-grid">
 
         <div class="text-card">
@@ -769,16 +565,10 @@
         </div>
       </div>
     </div>
-    </details>
 
-    <details class="expandable-wrapper">
-      <summary style="justify-content: center; padding: 20px;">
-        <div style="text-align: center;">
-          <h3 style="color: var(--navy); margin-bottom: 8px; font-size: 2rem; text-transform: uppercase;">What We Deliver</h3>
-          <p style="color: var(--cyan); margin-bottom: 0; font-weight: 600; font-size: 1.1rem; letter-spacing: 1px;">Complete Networking Made Simple</p>
-        </div>
-      </summary>
-      <div class="details-content">
+    <div class="build-section reveal reveal-stagger" style="margin-top: 60px;">
+      <h3 style="text-align: center; color: var(--navy); margin-bottom: 8px; font-size: 2rem; text-transform: uppercase;">What We Deliver</h3>
+      <p style="text-align: center; color: var(--cyan); margin-bottom: 32px; font-weight: 600; font-size: 1.1rem; letter-spacing: 1px;">Complete Networking Made Simple</p>
       <div class="text-cards-grid">
 
         <div class="text-card">
@@ -832,16 +622,10 @@
         </div>
       </div>
     </div>
-    </details>
 
-    <details class="expandable-wrapper">
-      <summary style="justify-content: center; padding: 20px;">
-        <div style="text-align: center;">
-          <h3 style="color: var(--navy); margin-bottom: 8px; font-size: 2rem; text-transform: uppercase;">Enterprise Wireless</h3>
-          <p style="color: var(--cyan); margin-bottom: 0; font-weight: 600; font-size: 1.1rem; letter-spacing: 1px;">Fast, Secure Wi-Fi Everywhere</p>
-        </div>
-      </summary>
-      <div class="details-content">
+    <div class="build-section reveal reveal-stagger" style="margin-top: 60px;">
+      <h3 style="text-align: center; color: var(--navy); margin-bottom: 8px; font-size: 2rem; text-transform: uppercase;">Enterprise Wireless</h3>
+      <p style="text-align: center; color: var(--cyan); margin-bottom: 32px; font-weight: 600; font-size: 1.1rem; letter-spacing: 1px;">Fast, Secure Wi-Fi Everywhere</p>
       <div class="text-cards-grid">
 
         <div class="text-card">
@@ -895,16 +679,10 @@
         </div>
       </div>
     </div>
-    </details>
 
-    <details class="expandable-wrapper">
-      <summary style="justify-content: center; padding: 20px;">
-        <div style="text-align: center;">
-          <h3 style="color: var(--navy); margin-bottom: 8px; font-size: 2rem; text-transform: uppercase;">What We Protect</h3>
-          <p style="color: var(--cyan); margin-bottom: 0; font-weight: 600; font-size: 1.1rem; letter-spacing: 1px;">Endpoint Security Made Simple</p>
-        </div>
-      </summary>
-      <div class="details-content">
+    <div class="build-section reveal reveal-stagger" style="margin-top: 60px;">
+      <h3 style="text-align: center; color: var(--navy); margin-bottom: 8px; font-size: 2rem; text-transform: uppercase;">What We Protect</h3>
+      <p style="text-align: center; color: var(--cyan); margin-bottom: 32px; font-weight: 600; font-size: 1.1rem; letter-spacing: 1px;">Endpoint Security Made Simple</p>
       <div class="text-cards-grid">
 
         <div class="text-card">
@@ -968,16 +746,10 @@
         </div>
       </div>
     </div>
-    </details>
 
-    <details class="expandable-wrapper">
-      <summary style="justify-content: center; padding: 20px;">
-        <div style="text-align: center;">
-          <h3 style="color: var(--navy); margin-bottom: 8px; font-size: 2rem; text-transform: uppercase;">Firewall & Network Security</h3>
-          <p style="color: var(--cyan); margin-bottom: 0; font-weight: 600; font-size: 1.1rem; letter-spacing: 1px;">Keep Your Business Safe Online</p>
-        </div>
-      </summary>
-      <div class="details-content">
+    <div class="build-section reveal reveal-stagger" style="margin-top: 60px;">
+      <h3 style="text-align: center; color: var(--navy); margin-bottom: 8px; font-size: 2rem; text-transform: uppercase;">Firewall & Network Security</h3>
+      <p style="text-align: center; color: var(--cyan); margin-bottom: 32px; font-weight: 600; font-size: 1.1rem; letter-spacing: 1px;">Keep Your Business Safe Online</p>
       <div class="text-cards-grid">
 
         <div class="text-card">
@@ -1026,16 +798,10 @@
         </div>
       </div>
     </div>
-    </details>
 
-    <details class="expandable-wrapper">
-      <summary style="justify-content: center; padding: 20px;">
-        <div style="text-align: center;">
-          <h3 style="color: var(--navy); margin-bottom: 8px; font-size: 2rem; text-transform: uppercase;">How We Connect</h3>
-          <p style="color: var(--cyan); margin-bottom: 0; font-weight: 600; font-size: 1.1rem; letter-spacing: 1px;">Connect Securely From Anywhere</p>
-        </div>
-      </summary>
-      <div class="details-content">
+    <div class="build-section reveal reveal-stagger" style="margin-top: 60px;">
+      <h3 style="text-align: center; color: var(--navy); margin-bottom: 8px; font-size: 2rem; text-transform: uppercase;">How We Connect</h3>
+      <p style="text-align: center; color: var(--cyan); margin-bottom: 32px; font-weight: 600; font-size: 1.1rem; letter-spacing: 1px;">Connect Securely From Anywhere</p>
       <div class="text-cards-grid">
 
         <div class="text-card">
@@ -1089,9 +855,7 @@
         </div>
       </div>
     </div>
-    </details>
 </div>
-</section>
 
   <!-- ================= TESTIMONIALS (from live site) ================= -->
 <section class="testimonials">
@@ -1108,7 +872,7 @@
 </section>
 
 <!-- ================= CLIENTS ================= -->
-<section class="logo-strip" id="clients">
+<section class="logo-strip">
   <div class="section-head reveal">
     <div class="eyebrow" style="color:var(--navy); border-color:var(--navy);">OUR CLIENTS</div>
     <h2 style="color:var(--navy); font-size:clamp(1.4rem,2.6vw,1.9rem);">Delivering Success to Every Client</h2>
@@ -1125,7 +889,7 @@
 </section>
 
 <!-- ================= ALLIANCES ================= -->
-<section class="logo-strip" id="partners" style="background:var(--card); border-top: 1px solid rgba(41, 182, 246, 0.1);">
+<section class="logo-strip" style="padding-top:0; background:var(--card);">
   <div class="section-head reveal">
     <div class="eyebrow" style="color:var(--navy); border-color:var(--navy);">PARTNERS</div>
     <h2 style="color:var(--navy); font-size:clamp(1.4rem,2.6vw,1.9rem);">Our Strategic Alliances</h2>
@@ -1158,7 +922,6 @@
       <div class="tl-item"><div class="tl-year">2016</div><div class="tl-desc">Expanded to Shivamogga</div></div>
       <div class="tl-item"><div class="tl-year">2020</div><div class="tl-desc">1M+ Man Hours delivered</div></div>
       <div class="tl-item"><div class="tl-year">2024</div><div class="tl-desc">Leading IT Solutions Provider</div></div>
-      <div class="tl-item"><div class="tl-year">2026</div><div class="tl-desc">Trusted by a Strong Customer Base</div></div>
     </div>
   </div>
 </section>
@@ -1181,17 +944,25 @@
 
 <!-- ================= CONTACT ================= -->
 <section class="contact" id="contact">
-  <div class="contact-title">GET IN TOUCH</div>
-  <div class="contact-row email">
-    <i class="fa-solid fa-envelope"></i> <a href="mailto:punith@solventnetworksolutions.in">punith@solventnetworksolutions.in</a>
+  <div class="contact-inner">
+    <h2>Get In Touch</h2>
+    <p class="lede">We deliver what we promise.</p>
+    <div class="contact-card reveal">
+      <div class="contact-row email">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+        punith@solventnetworksolutions.in
+      </div>
+      <div class="contact-row">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M6 3h3l1.5 4.5L8 9.5a12 12 0 006.5 6.5l2-2.5L21 15v3a2 2 0 01-2 2C10.5 20 4 13.5 4 5a2 2 0 012-2z"/></svg></div>
+        +91 97409 80206 &nbsp;·&nbsp; +91 94814 04681
+      </div>
+      <div class="contact-row">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M12 21s7-6.5 7-11.5A7 7 0 005 9.5C5 14.5 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.3"/></svg></div>
+        #21, Navule Hosur, Savalanga Road, Shivamogga, Karnataka – 577204
+      </div>
+    </div>
+    <div class="promise">We <span>Deliver</span> what we <span>Promise</span></div>
   </div>
-  <div class="contact-row">
-    <i class="fa-solid fa-phone"></i> <a href="tel:+919740980206">+91 97409 80206</a> &nbsp;·&nbsp; <a href="tel:+919481404681">+91 94814 04681</a>
-  </div>
-  <div class="contact-row">
-    <i class="fa-solid fa-location-dot"></i> #21, Navule Hosur, Savalanga Road, Shivamogga, Karnataka – 577204
-  </div>
-  <div class="promise">We <span>Deliver</span> what we <span>Promise</span></div>
 </section>
 
 <footer>
@@ -1223,114 +994,5 @@
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 </script>
 
-<!-- Interactive Globe using globe.gl -->
-<style>
-  @keyframes blinkDevice {
-    0% { opacity: 0.2; transform: scale(0.6); }
-    100% { opacity: 1; transform: scale(1.4); }
-  }
-</style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://unpkg.com/globe.gl@2.32.1/dist/globe.gl.min.js"></script>
-<script>
-  const container = document.getElementById('globe-canvas-container');
-  if (container) {
-    const globe = Globe({ animateIn: false })
-      (container)
-      .width(container.clientWidth || 500)
-      .height(container.clientHeight || 480)
-      .backgroundColor('rgba(0,0,0,0)')
-      .showGlobe(true)
-      .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-night.jpg')
-      .showAtmosphere(true)
-      .atmosphereColor('#29B6F6')
-      .atmosphereAltitude(0.15);
-
-    globe.controls().autoRotate = true;
-    globe.controls().autoRotateSpeed = 1.2;
-    globe.controls().enableZoom = false;
-
-    // Network lights/devices
-    const N = 80;
-    const colors = ['#25D366', '#29B6F6', '#FF3B30', '#FFCC00', '#A200FF', '#ffffff'];
-    const gData = [...Array(N).keys()].map(() => ({
-      lat: (Math.random() - 0.5) * 160,
-      lng: (Math.random() - 0.5) * 360,
-      size: Math.random() * 0.4 + 0.1,
-      color: colors[Math.floor(Math.random() * colors.length)],
-      period: Math.random() * 1500 + 800
-    }));
-
-    // Solid small dots
-    globe.pointsData(gData)
-      .pointColor('color')
-      .pointAltitude(0.01)
-      .pointRadius('size');
-
-    // Emitting rings for the blinking/pulsing effect
-    globe.ringsData(gData)
-      .ringColor('color')
-      .ringMaxRadius(d => d.size * 3.5)
-      .ringPropagationSpeed(d => d.size * 2)
-      .ringRepeatPeriod('period');
-
-    // Generate connecting network arcs
-    const arcData = [];
-    for (let i = 0; i < N; i++) {
-      const p1 = gData[Math.floor(Math.random() * N)];
-      const p2 = gData[Math.floor(Math.random() * N)];
-      if (p1 !== p2 && Math.random() > 0.4) {
-        arcData.push({
-          startLat: p1.lat, startLng: p1.lng,
-          endLat: p2.lat, endLng: p2.lng,
-          color: p1.color
-        });
-      }
-    }
-
-    globe.arcsData(arcData)
-      .arcColor('color')
-      .arcDashLength(0.3)
-      .arcDashGap(0.2)
-      .arcDashInitialGap(() => Math.random() * 5)
-      .arcDashAnimateTime(2000)
-      .arcAltitudeAutoScale(0.2)
-      .arcStroke(0.3);
-    // Floating tech words around the globe
-    const techWords = ["Servers", "Storage", "VPN", "File-Hub", "Remote-Office-Access", "Secure-Remote-Work", "Encrypted-Tunnel", "Access-Control", "Secure-Login", "Secure-gateway", "Safe-Storage", "Power-backup"];
-    
-    function spawnFloatingWord() {
-      const word = document.createElement('div');
-      word.className = 'floating-word';
-      word.textContent = techWords[Math.floor(Math.random() * techWords.length)];
-      
-      const isLeft = Math.random() > 0.5;
-      const x = isLeft ? Math.random() * 20 : 70 + Math.random() * 20; 
-      const y = 15 + Math.random() * 70; 
-      
-      word.style.left = `${x}%`;
-      word.style.top = `${y}%`;
-      
-      if(Math.random() > 0.6) {
-         word.style.color = '#25D366';
-         word.style.textShadow = '0 0 8px rgba(37, 211, 102, 0.6)';
-      }
-
-      container.appendChild(word);
-      
-      setTimeout(() => {
-        if (container.contains(word)) container.removeChild(word);
-      }, 7000);
-    }
-
-    setInterval(spawnFloatingWord, 1800);
-      
-    // Handle resizing
-    window.addEventListener('resize', () => {
-      globe.width(container.clientWidth);
-      globe.height(container.clientHeight);
-    });
-  }
-</script>
 </body>
 </html>
