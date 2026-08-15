@@ -15,7 +15,7 @@
     --gold: #0A8FA3; /* Replaced gold with a deep teal to match infographics */
     --ink: #17191C;
     --bg: #F4FAFF;        /* cool icy blue background */
-    --header-bg: #0B2A6B; /* distinct header color, separate from page bg */
+    --header-bg: #F5F7FA; /* graywhite header */
     --card: #FFFFFF;
     --muted: #55606E;
     --line: #D9EEFA;
@@ -31,31 +31,41 @@
   h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 800; letter-spacing: -0.01em; }
   a { color: inherit; text-decoration: none; }
 
-  /* ================= NAV — distinct navy header ================= */
+  /* ================= NAV — distinct header ================= */
   nav {
-    position: sticky; top: 0; z-index: 50;
+    position: sticky; top: 15px; z-index: 50;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 16px 6vw;
-    background: var(--header-bg);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 12px 4vw;
+    margin: 0 4vw;
+    border-radius: 20px;
+    background: linear-gradient(var(--header-bg), var(--header-bg)) padding-box,
+                linear-gradient(90deg, rgba(138,216,250,0.6), rgba(41,182,246,0.6), rgba(10,143,163,0.6)) border-box;
+    border: 1.5px solid transparent;
+    box-shadow: 0 8px 32px rgba(41, 182, 246, 0.15), 0 0 15px rgba(10, 143, 163, 0.1);
   }
   .logo { display: flex; align-items: center; gap: 12px; }
   .logo-badge {
     width: 44px; height: 44px; border-radius: 10px;
-    background: #fff;
+    background: var(--navy);
     display: flex; align-items: center; justify-content: center;
     flex-shrink: 0;
   }
   .logo-badge svg { width: 26px; height: 26px; }
   .logo-text { line-height: 1.05; }
-  .logo-text .l1 { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 1.05rem; color: #fff; }
-  .logo-text .l2 { font-size: 0.6rem; letter-spacing: 0.15em; color: var(--cyan-pale); font-weight: 600; }
-  .logo-text .l3 { font-size: 0.55rem; letter-spacing: 0.05em; color: rgba(255, 255, 255, 0.7); margin-top: 2px; }
+  .logo-text .l1 { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 1.05rem; color: var(--navy); }
+  .logo-text .l2 { font-size: 0.6rem; letter-spacing: 0.15em; color: var(--gold); font-weight: 600; }
+  .logo-text .l3 { font-size: 0.55rem; letter-spacing: 0.05em; color: var(--muted); margin-top: 2px; }
   nav .links { display: flex; gap: 24px; font-weight: 600; font-size: 0.9rem; }
-  nav .links a { color: #fff; opacity: 0.8; }
+  nav .links a { color: var(--navy); opacity: 0.8; position: relative; padding-bottom: 4px; }
+  nav .links a::after {
+    content: ''; position: absolute; left: 0; bottom: 0;
+    width: 0%; height: 2px; background: var(--cyan);
+    transition: width 0.3s ease;
+  }
   nav .links a:hover { opacity: 1; }
+  nav .links a:hover::after { width: 100%; }
   .nav-cta {
-    background: var(--gold); color: var(--navy-dark); padding: 10px 22px; border-radius: 999px;
+    background: var(--navy); color: #fff; padding: 10px 22px; border-radius: 999px;
     font-weight: 700; font-size: 0.85rem;
   }
 
@@ -65,16 +75,12 @@
     padding: 90px 6vw 110px;
     overflow: hidden;
     background-color: #ffffff;
-    background-image: 
-      linear-gradient(rgba(41, 182, 246, 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(41, 182, 246, 0.06) 1px, transparent 1px);
-    background-size: 40px 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8vw;
   }
-  .info-wave { position: absolute; top: 0; left: 0; width: 45vw; max-width: 600px; height: auto; z-index: 0; }
+  .info-wave { position: absolute; top: 0; left: 0; width: 25vw; max-width: 300px; height: auto; z-index: 0; }
   .info-dots { position: absolute; top: 30px; right: 5vw; width: 120px; z-index: 0; opacity: 0.5; }
   .hero-content { position: relative; z-index: 2; max-width: 620px; }
   .hero-image-container {
@@ -160,8 +166,8 @@
     left: 0;
     width: 100%;
     overflow: hidden;
-    background: var(--navy);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(41, 182, 246, 0.1);
+    border-top: 1px solid rgba(41, 182, 246, 0.2);
     padding: 12px 0;
     z-index: 10;
   }
@@ -173,8 +179,8 @@
   .tech-ticker-item {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.85rem;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.85);
+    font-weight: 700;
+    color: var(--navy);
     padding: 0 40px;
     position: relative;
     letter-spacing: 0.05em;
@@ -223,7 +229,11 @@
   .thread-divider svg { width: 100%; height: 100%; }
 
   /* ================= SERVICES ================= */
-  .services { padding: 20px 6vw 30px; background: var(--navy-dark); }
+  .services { 
+    padding: 20px 6vw 30px; 
+    background: linear-gradient(rgba(7, 28, 77, 0.4), rgba(7, 28, 77, 0.7)), url('assets/robot-bg.png') center / cover no-repeat;
+    background-color: var(--navy-dark); 
+  }
   .section-head { text-align: center; max-width: 640px; margin: 0 auto 56px; }
   .section-head .eyebrow { color: var(--cyan-pale); border-color: var(--cyan-pale); }
   .services .section-head h2 { color: #fff; font-size: clamp(1.8rem, 3.5vw, 2.4rem); }
@@ -231,30 +241,32 @@
 
   .service-row {
     display: grid; grid-template-columns: 90px 1fr; gap: 28px;
-    padding: 32px 0; border-bottom: 1px solid rgba(255,255,255,0.12);
-    max-width: 1080px; margin: 0 auto;
-    transition: background 0.25s ease, transform 0.25s ease; border-radius: 10px;
+    padding: 32px; border: 1px solid var(--line);
+    background: var(--card);
+    box-shadow: 0 4px 16px rgba(11, 42, 107, 0.04);
+    max-width: 1080px; margin: 0 auto 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; border-radius: 16px;
   }
-  .service-row:last-child { border-bottom: none; }
-  .service-row:hover { background: rgba(255,255,255,0.035); transform: translateX(4px); }
+  .service-row:last-child { margin-bottom: 0; }
+  .service-row:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(11, 42, 107, 0.12); border-color: var(--cyan-pale); }
   .service-icon {
     width: 64px; height: 64px; border-radius: 16px;
-    background: rgba(255,255,255,0.06);
+    background: #EAF3FC;
     display: flex; align-items: center; justify-content: center;
-    border: 1px solid rgba(138,216,250,0.3);
-    transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+    border: 1px solid transparent;
+    transition: background 0.25s ease, transform 0.25s ease;
   }
-  .service-row:hover .service-icon { background: var(--cyan); border-color: var(--cyan); transform: scale(1.08); }
-  .service-row:hover .service-icon svg { stroke: var(--navy-dark); }
-  .service-icon svg { width: 32px; height: 32px; }
-  .service-body h3 { color: #fff; font-size: 1.15rem; margin-bottom: 14px; letter-spacing: 0; }
+  .service-row:hover .service-icon { background: var(--cyan); transform: scale(1.08); }
+  .service-row:hover .service-icon svg { stroke: #fff; }
+  .service-icon svg { width: 32px; height: 32px; stroke: var(--cyan); }
+  .service-body h3 { color: var(--navy); font-size: 1.25rem; margin-bottom: 14px; letter-spacing: 0; font-family: 'Montserrat', sans-serif; }
   .service-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
   .service-cols .label {
-    font-weight: 700; font-size: 0.72rem; letter-spacing: 0.1em; color: var(--gold);
+    font-weight: 700; font-size: 0.75rem; letter-spacing: 0.1em; color: var(--cyan);
     margin-bottom: 8px; display: block; text-transform: uppercase;
   }
-  .service-cols p { color: #C6D2E2; font-size: 0.94rem; line-height: 1.55; }
-  .service-cols p strong { color: #fff; }
+  .service-cols p { color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
+  .service-cols p strong { color: var(--navy); }
 
   @media (max-width: 760px) {
     .service-row { grid-template-columns: 56px 1fr; }
@@ -284,7 +296,11 @@
   .extra-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.4; }
 
   /* ================= VISUAL SOLUTIONS ================= */
-  .visual-solutions { padding: 20px 6vw 70px; background: var(--bg); }
+  .visual-solutions { 
+    padding: 20px 6vw 70px; 
+    background: linear-gradient(rgba(244, 250, 255, 0.85), rgba(244, 250, 255, 0.92)), url('assets/robo.png') center / cover no-repeat;
+    background-color: var(--bg); 
+  }
   .visual-grid { 
     max-width: 1000px; 
     margin: 0 auto; 
@@ -428,7 +444,7 @@
   .promise { width: 100%; text-align: center; margin: 0; color: var(--gold); font-weight: 700; font-size: 1rem; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.05); }
   .promise span { color: #fff; }
 
-  footer { text-align: center; padding: 20px 6vw 15px; color: #8A8272; font-size: 0.72rem; line-height: 1.6; background: var(--bg); }
+  footer { text-align: center; padding: 20px 6vw 15px; color: #8A8272; font-size: 0.72rem; line-height: 1.6; background: rgba(41, 182, 246, 0.1); }
 
   @media (max-width: 900px) {
     .hero { flex-direction: column; text-align: center; }
@@ -482,21 +498,17 @@
     display: flex !important;
     justify-content: space-between !important;
     align-items: center;
-    border-bottom: 1px solid rgba(41, 182, 246, 0.2);
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(to right, rgba(138,216,250,0.5), rgba(41,182,246,0.5), transparent) 1;
     padding: 16px 20px 16px 0 !important;
     margin-bottom: 20px;
     transition: all 0.3s;
-    animation: pulseBorder 3s infinite alternate;
-  }
-  @keyframes pulseBorder {
-    from { border-bottom-color: rgba(41, 182, 246, 0.2); }
-    to { border-bottom-color: rgba(41, 182, 246, 0.5); }
   }
   details.expandable-wrapper > summary::-webkit-details-marker {
     display: none;
   }
   details.expandable-wrapper > summary:hover {
-    border-bottom-color: rgba(41, 182, 246, 0.8);
+    border-image: linear-gradient(to right, rgba(138,216,250,0.9), rgba(41,182,246,0.9), transparent) 1;
     background: linear-gradient(to right, rgba(41, 182, 246, 0.05), transparent);
   }
   /* Enforce uniform left-alignment for all accordion headers */
@@ -531,7 +543,7 @@
   }
   details[open].expandable-wrapper > summary {
     animation: none;
-    border-bottom-color: rgba(41, 182, 246, 0.6);
+    border-image: linear-gradient(to right, rgba(138,216,250,0.7), rgba(41,182,246,0.7), transparent) 1;
     background: transparent;
   }
   details.expandable-wrapper > .details-content {
@@ -540,6 +552,14 @@
   @keyframes fadeInDown {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
+  }
+  .phone-link {
+    transition: transform 0.2s ease, color 0.2s ease, text-shadow 0.2s ease;
+  }
+  .phone-link:hover {
+    transform: translateY(-2px);
+    color: var(--cyan) !important;
+    text-shadow: 0 0 10px rgba(41, 182, 246, 0.4);
   }
 </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -567,7 +587,10 @@
     <a href="#industries">Industries</a>
     <a href="#contact">Contact</a>
   </div>
-  <a href="#contact" class="nav-cta">Get In Touch</a>
+  <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 16px;">
+    <a href="tel:+919740980206" class="phone-link" style="color: var(--navy); font-size: 0.85rem; font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-phone" style="color: var(--cyan);"></i> +91 97409 80206</a>
+    <a href="tel:+919481404681" class="phone-link" style="color: var(--navy); font-size: 0.85rem; font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-phone" style="color: var(--cyan);"></i> +91 94814 04681</a>
+  </div>
 </nav>
 
 <!-- ================= HERO ================= -->
@@ -576,7 +599,6 @@
   <svg class="info-wave" viewBox="0 0 500 500" preserveAspectRatio="none">
     <path d="M0,0 L500,0 C350,150 150,300 0,500 Z" fill="var(--cyan-pale)" opacity="0.3"/>
     <path d="M0,0 L350,0 C200,100 100,250 0,400 Z" fill="var(--cyan)"/>
-    <path d="M0,0 L200,0 C100,50 50,150 0,250 Z" fill="var(--navy)"/>
   </svg>
   <!-- Decorative Top-Right Dots -->
   <svg class="info-dots" viewBox="0 0 100 100">
@@ -589,7 +611,8 @@
     <h1>Solvent Network Solutions</h1>
     <p class="tagline">One stop destination for empowering secure connections over your network services.</p>
     <div class="hero-ctas">
-      <a href="#contact" class="btn btn-primary">Get In Touch</a>
+      <a href="tel:+919740980206" class="phone-link" style="color: var(--navy); font-size: 1.05rem; font-weight: 700; display: inline-flex; align-items: center; gap: 8px;"><i class="fa-solid fa-phone" style="color: var(--cyan);"></i> +91 97409 80206</a>
+      <a href="tel:+919481404681" class="phone-link" style="color: var(--navy); font-size: 1.05rem; font-weight: 700; display: inline-flex; align-items: center; gap: 8px;"><i class="fa-solid fa-phone" style="color: var(--cyan);"></i> +91 94814 04681</a>
       <a href="#services" class="btn btn-secondary">See Our Solutions</a>
     </div>
   </div>
@@ -1187,6 +1210,9 @@
   </div>
   <div class="contact-row">
     <i class="fa-solid fa-phone"></i> <a href="tel:+919740980206">+91 97409 80206</a> &nbsp;·&nbsp; <a href="tel:+919481404681">+91 94814 04681</a>
+  </div>
+  <div class="contact-row">
+    <i class="fa-solid fa-location-dot"></i> Rajajinagar 2nd Stage, Bangalore - 560010
   </div>
   <div class="contact-row">
     <i class="fa-solid fa-location-dot"></i> #21, Navule Hosur, Savalanga Road, Shivamogga, Karnataka – 577204
