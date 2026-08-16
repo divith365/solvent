@@ -567,6 +567,41 @@
     color: var(--cyan) !important;
     text-shadow: 0 0 10px rgba(41, 182, 246, 0.4);
   }
+
+  /* ================= TABLES ================= */
+  .styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 0.95em;
+    font-family: 'Work Sans', sans-serif;
+    min-width: 600px;
+    box-shadow: 0 4px 16px rgba(11, 42, 107, 0.04);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .styled-table thead tr {
+    background-color: var(--navy);
+    color: #ffffff;
+    text-align: left;
+  }
+  .styled-table th, .styled-table td {
+    padding: 16px 20px;
+    color: var(--ink);
+  }
+  .styled-table tbody tr {
+    border-bottom: 1px solid var(--line);
+    background-color: var(--card);
+  }
+  .styled-table tbody tr:nth-of-type(even) {
+    background-color: #f9fbfd;
+  }
+  .styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid var(--cyan);
+  }
+  .styled-table tbody tr:hover {
+    background-color: #f1f7fc;
+  }
 </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -1142,7 +1177,7 @@
     <div class="eyebrow" style="color:var(--navy); border-color:var(--navy);">OUR CLIENTS</div>
     <h2 style="color:var(--navy); font-size:clamp(1.4rem,2.6vw,1.9rem);">Delivering Success to Every Client</h2>
   </div>
-  <div class="logo-row reveal">
+  <div class="logo-row reveal" style="margin-bottom: 30px;">
     <img src="https://solvent-network-solutions1.netlify.app/assets/non bg/apex.png" alt="Apex Bank">
     <img src="https://solvent-network-solutions1.netlify.app/assets/non bg/jnnce.jpg" alt="JNNCE">
     <img src="https://solvent-network-solutions1.netlify.app/assets/non bg/nandi.jpg" alt="Nandi Sugars">
@@ -1151,6 +1186,44 @@
     <img src="https://solvent-network-solutions1.netlify.app/assets/non bg/ballary dcc.jpg" alt="Ballary DCC">
     <img src="https://solvent-network-solutions1.netlify.app/assets/non bg/tls.png" alt="TLS">
   </div>
+
+  <details class="expandable-wrapper reveal" style="max-width: 1100px;">
+    <summary style="justify-content: center; padding: 20px;">
+      <div style="text-align: center;">
+        <h3 style="color: var(--navy); margin-bottom: 8px; font-size: 1.6rem; text-transform: uppercase;">View All Clients</h3>
+        <p style="color: var(--cyan); margin-bottom: 0; font-weight: 600; font-size: 1rem; letter-spacing: 1px;">Complete List of Our Esteemed Clients</p>
+      </div>
+    </summary>
+    <div class="details-content" style="overflow-x: auto; padding: 0 15px;">
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th style="width: 80px;">No.</th>
+            <th>Client Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td><strong>THE KARNATAKA STATE COOPERATIVE APEX BANK LTD.</strong></td></tr>
+          <tr><td>2</td><td><strong>Tumkur D C C Bank Ltd.</strong></td></tr>
+          <tr><td>3</td><td><strong>Bellary D.C.C. Bank Ltd.</strong></td></tr>
+          <tr><td>4</td><td><strong>Prragathi Steel Castings Pvt Ltd. Shivamogga</strong></td></tr>
+          <tr><td>5</td><td><strong>Shanthala Spherocast Private Ltd. Shivamogga</strong></td></tr>
+          <tr><td>6</td><td><strong>Vijay technnocrafts. Shivamogga</strong></td></tr>
+          <tr><td>7</td><td><strong>Shiva Sahakari Bank Niyamitha, Shikaripura</strong></td></tr>
+          <tr><td>8</td><td><strong>Shiva Co-operative bank ltd. Davangere</strong></td></tr>
+          <tr><td>9</td><td><strong>National Education Society(NES), Shivamogga</strong></td></tr>
+          <tr><td>10</td><td><strong>JNN College of Engineering, Shivmogga</strong></td></tr>
+          <tr><td>11</td><td><strong>TLS paper products, Bangalore</strong></td></tr>
+          <tr><td>12</td><td><strong>Pinnacle Façade Design Pvt ltd, Bangalore</strong></td></tr>
+          <tr><td>13</td><td><strong>Nandi Sugars Ltd, Bagalkot</strong></td></tr>
+          <tr><td>14</td><td><strong>Priyadarshini Mahila Sahakara Bank, Haveri</strong></td></tr>
+          <tr><td>15</td><td><strong>The Nandi Sahakari Sakkare Karkhane Niyamit, Vijayapura</strong></td></tr>
+          <tr><td>16</td><td><strong>IAME, Bangalore</strong></td></tr>
+          <tr><td>17</td><td><strong>Basveshwara Urban Bank, Shiralakoppa</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
 </section>
 
 <!-- ================= ALLIANCES ================= -->
@@ -1159,7 +1232,7 @@
     <div class="eyebrow" style="color:var(--navy); border-color:var(--navy);">PARTNERS</div>
     <h2 style="color:var(--navy); font-size:clamp(1.4rem,2.6vw,1.9rem);">Our Strategic Alliances</h2>
   </div>
-  <div class="logo-row reveal">
+  <div class="logo-row reveal" style="margin-bottom: 30px;">
     <img src="https://solvent-network-solutions1.netlify.app/assets/strategic/Hikvision-Logo-500x281.png" alt="Hikvision">
     <img src="https://solvent-network-solutions1.netlify.app/assets/strategic/cisco.png" alt="Cisco">
     <img src="https://solvent-network-solutions1.netlify.app/assets/strategic/Dlink.png" alt="D-Link">
@@ -1168,6 +1241,41 @@
     <img src="https://solvent-network-solutions1.netlify.app/assets/strategic/sify.png" alt="Sify">
     <img src="https://solvent-network-solutions1.netlify.app/assets/strategic/cambium.png" alt="Cambium">
   </div>
+
+  <details class="expandable-wrapper reveal" style="max-width: 1100px;">
+    <summary style="justify-content: center; padding: 20px;">
+      <div style="text-align: center;">
+        <h3 style="color: var(--navy); margin-bottom: 8px; font-size: 1.6rem; text-transform: uppercase;">View All Partners</h3>
+        <p style="color: var(--cyan); margin-bottom: 0; font-weight: 600; font-size: 1rem; letter-spacing: 1px;">Complete List of Strategic Alliances</p>
+      </div>
+    </summary>
+    <div class="details-content" style="overflow-x: auto; padding: 0 15px;">
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Partner</th>
+            <th>Focus Area</th>
+            <th>Website</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Cisco Systems Networks</strong></td><td>Network Switches, Routers, Security Products</td><td><a href="http://www.cisco.com" target="_blank" style="color:var(--cyan); font-weight:600; text-decoration:underline;">www.cisco.com</a></td></tr>
+          <tr><td><strong>HP India (Network)</strong></td><td>Entire Range of Networking Products</td><td><a href="http://www.hp.com" target="_blank" style="color:var(--cyan); font-weight:600; text-decoration:underline;">www.hp.com</a></td></tr>
+          <tr><td><strong>Molex (India) Ltd.</strong></td><td>Network Cabling Solutions for Copper and Fiber Products</td><td>—</td></tr>
+          <tr><td><strong>Tyco India Ltd.</strong></td><td>Entire Range of AMP Passive and Active LAN Solutions</td><td>—</td></tr>
+          <tr><td><strong>D-Link India Ltd.</strong></td><td>Complete Range of Networking Products</td><td>—</td></tr>
+          <tr><td><strong>Sify Ltd.</strong></td><td>Leased Internet, VPN and MPLS-based WAN Connectivity Solutions, Data Center, Hosting, etc.</td><td><a href="http://www.sifycorp.com" target="_blank" style="color:var(--cyan); font-weight:600; text-decoration:underline;">www.sifycorp.com</a></td></tr>
+          <tr><td><strong>Ruckus Networks</strong></td><td>Most Admired Wireless Solutions</td><td><a href="http://ruckuswireless.com" target="_blank" style="color:var(--cyan); font-weight:600; text-decoration:underline;">ruckuswireless.com</a></td></tr>
+          <tr><td><strong>Cambium Networks</strong></td><td>Highly Reliable Backbone Wireless Solutions</td><td><a href="http://cambiumnetworks.com" target="_blank" style="color:var(--cyan); font-weight:600; text-decoration:underline;">cambiumnetworks.com</a></td></tr>
+          <tr><td><strong>MRO-TEK India Ltd.</strong></td><td>RAD Modems and Networking Products</td><td><a href="http://www.mrotek.com" target="_blank" style="color:var(--cyan); font-weight:600; text-decoration:underline;">www.mrotek.com</a></td></tr>
+          <tr><td><strong>Tacitine Consulting Pvt Ltd.</strong></td><td>Tacitine Range of Over-Edge Connectivity Solutions</td><td>—</td></tr>
+          <tr><td><strong>Honeywell India Ltd.</strong></td><td>Advanced CCTV Solutions for Multi-Location Requirements</td><td>—</td></tr>
+          <tr><td><strong>Hikvision India Pvt Ltd.</strong></td><td>Well-Known Analog and IP CCTV Solutions</td><td>—</td></tr>
+          <tr><td><strong>Netmagic IT Services P Ltd.</strong></td><td>NTT Group – Data Center Activity Partner</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
 </section>
 
 <!-- ================= ABOUT / JOURNEY ================= -->
