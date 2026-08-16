@@ -231,13 +231,13 @@
   /* ================= SERVICES ================= */
   .services { 
     padding: 20px 6vw 30px; 
-    background: linear-gradient(rgba(7, 28, 77, 0.4), rgba(7, 28, 77, 0.7)), url('assets/robot-bg.png') center / cover no-repeat;
-    background-color: var(--navy-dark); 
+    background-color: #F8FAFC; 
   }
   .section-head { text-align: center; max-width: 640px; margin: 0 auto 56px; }
   .section-head .eyebrow { color: var(--cyan-pale); border-color: var(--cyan-pale); }
-  .services .section-head h2 { color: #fff; font-size: clamp(1.8rem, 3.5vw, 2.4rem); }
-  .services .section-head p { color: #B9C6DA; margin-top: 14px; font-size: 1.02rem; }
+  .services .section-head .eyebrow { color: var(--navy); border-color: var(--cyan); }
+  .services .section-head h2 { color: var(--navy); font-size: clamp(1.8rem, 3.5vw, 2.4rem); }
+  .services .section-head p { color: var(--muted); margin-top: 14px; font-size: 1.02rem; }
 
   .service-row {
     display: grid; grid-template-columns: 90px 1fr; gap: 28px;
@@ -420,8 +420,8 @@
   /* ================= CONTACT ================= */
   .contact { 
     padding: 20px 4vw; 
-    background: #1E293B; 
-    border-top: 2px solid var(--cyan);
+    background: #EAD8C3; 
+    border-top: 2px solid var(--navy);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -429,20 +429,20 @@
     gap: 30px;
   }
   .contact-title {
-    color: #fff;
+    color: var(--navy);
     font-size: 1.1rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
     letter-spacing: 1px;
   }
-  .contact-row { display: flex; align-items: center; gap: 10px; color: #E2E8F0; font-weight: 600; font-size: 0.95rem; }
-  .contact-row i { color: var(--cyan); font-size: 1.1rem; }
+  .contact-row { display: flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 600; font-size: 0.95rem; }
+  .contact-row i { color: var(--navy); font-size: 1.1rem; }
   .contact-row.email { word-break: break-all; }
-  .contact-row a { color: #E2E8F0; text-decoration: none; transition: color 0.2s, transform 0.2s, text-shadow 0.2s; display: inline-block; }
-  .contact-row a:hover { color: #fff; transform: translateY(-2px) scale(1.02); text-shadow: 0 0 10px rgba(41, 182, 246, 0.6); }
+  .contact-row a { color: var(--ink); text-decoration: none; transition: color 0.2s, transform 0.2s, text-shadow 0.2s; display: inline-block; }
+  .contact-row a:hover { color: var(--navy); transform: translateY(-2px) scale(1.02); text-shadow: 0 0 10px rgba(11, 42, 107, 0.2); }
 
-  .promise { width: 100%; text-align: center; margin: 0; color: #94A3B8; font-weight: 700; font-size: 1.1rem; padding-top: 10px; border-top: 1px solid rgba(255, 255, 255, 0.1); }
-  .promise span { color: #fff; }
+  .promise { width: 100%; text-align: center; margin: 0; color: var(--muted); font-weight: 700; font-size: 1.1rem; padding-top: 10px; border-top: 1px solid rgba(11, 42, 107, 0.1); }
+  .promise span { color: var(--navy); }
 
   footer { text-align: center; padding: 20px 6vw 15px; color: #8A8272; font-size: 0.72rem; line-height: 1.6; background: rgba(41, 182, 246, 0.1); }
 
@@ -758,7 +758,7 @@
       <div class="text-cards-grid">
 
         <div class="text-card">
-          <h4><i class="fa-solid fa-network-wired"></i> Clean Cabling</h4>
+          <h4><i class="fa-solid fa-network-wired"></i> Structured Cabling</h4>
           <p>Neat, labeled cabling for zero clutter and maximum reliability.</p>
         </div>
 
