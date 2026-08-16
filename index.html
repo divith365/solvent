@@ -597,7 +597,7 @@
     margin: 10px 0;
     font-size: 0.95em;
     font-family: 'Work Sans', sans-serif;
-    min-width: 600px;
+    min-width: 100%;
     box-shadow: 0 4px 16px rgba(11, 42, 107, 0.04);
     border-radius: 12px;
     overflow: hidden;
@@ -611,6 +611,12 @@
   .styled-table th, .styled-table td {
     padding: 16px 20px;
     color: var(--ink);
+  }
+  @media (max-width: 640px) {
+    .styled-table th, .styled-table td {
+      padding: 12px 10px;
+      font-size: 0.9rem;
+    }
   }
   .styled-table tbody tr {
     border-bottom: 1px solid var(--line);
@@ -1228,28 +1234,27 @@
       <table class="styled-table">
         <thead>
           <tr>
-            <th style="width: 80px;">No.</th>
             <th>Client Name</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>1</td><td><strong>THE KARNATAKA STATE COOPERATIVE APEX BANK LTD.</strong></td></tr>
-          <tr><td>2</td><td><strong>Tumkur D C C Bank Ltd.</strong></td></tr>
-          <tr><td>3</td><td><strong>Bellary D.C.C. Bank Ltd.</strong></td></tr>
-          <tr><td>4</td><td><strong>Prragathi Steel Castings Pvt Ltd. Shivamogga</strong></td></tr>
-          <tr><td>5</td><td><strong>Shanthala Spherocast Private Ltd. Shivamogga</strong></td></tr>
-          <tr><td>6</td><td><strong>Vijay technnocrafts. Shivamogga</strong></td></tr>
-          <tr><td>7</td><td><strong>Shiva Sahakari Bank Niyamitha, Shikaripura</strong></td></tr>
-          <tr><td>8</td><td><strong>Shiva Co-operative bank ltd. Davangere</strong></td></tr>
-          <tr><td>9</td><td><strong>National Education Society(NES), Shivamogga</strong></td></tr>
-          <tr><td>10</td><td><strong>JNN College of Engineering, Shivmogga</strong></td></tr>
-          <tr><td>11</td><td><strong>TLS paper products, Bangalore</strong></td></tr>
-          <tr><td>12</td><td><strong>Pinnacle Façade Design Pvt ltd, Bangalore</strong></td></tr>
-          <tr><td>13</td><td><strong>Nandi Sugars Ltd, Bagalkot</strong></td></tr>
-          <tr><td>14</td><td><strong>Priyadarshini Mahila Sahakara Bank, Haveri</strong></td></tr>
-          <tr><td>15</td><td><strong>The Nandi Sahakari Sakkare Karkhane Niyamit, Vijayapura</strong></td></tr>
-          <tr><td>16</td><td><strong>IAME, Bangalore</strong></td></tr>
-          <tr><td>17</td><td><strong>Basveshwara Urban Bank, Shiralakoppa</strong></td></tr>
+          <tr><td><strong>THE KARNATAKA STATE COOPERATIVE APEX BANK LTD.</strong></td></tr>
+          <tr><td><strong>Tumkur D C C Bank Ltd.</strong></td></tr>
+          <tr><td><strong>Bellary D.C.C. Bank Ltd.</strong></td></tr>
+          <tr><td><strong>Prragathi Steel Castings Pvt Ltd. Shivamogga</strong></td></tr>
+          <tr><td><strong>Shanthala Spherocast Private Ltd. Shivamogga</strong></td></tr>
+          <tr><td><strong>Vijay technnocrafts. Shivamogga</strong></td></tr>
+          <tr><td><strong>Shiva Sahakari Bank Niyamitha, Shikaripura</strong></td></tr>
+          <tr><td><strong>Shiva Co-operative bank ltd. Davangere</strong></td></tr>
+          <tr><td><strong>National Education Society(NES), Shivamogga</strong></td></tr>
+          <tr><td><strong>JNN College of Engineering, Shivmogga</strong></td></tr>
+          <tr><td><strong>TLS paper products, Bangalore</strong></td></tr>
+          <tr><td><strong>Pinnacle Façade Design Pvt ltd, Bangalore</strong></td></tr>
+          <tr><td><strong>Nandi Sugars Ltd, Bagalkot</strong></td></tr>
+          <tr><td><strong>Priyadarshini Mahila Sahakara Bank, Haveri</strong></td></tr>
+          <tr><td><strong>The Nandi Sahakari Sakkare Karkhane Niyamit, Vijayapura</strong></td></tr>
+          <tr><td><strong>IAME, Bangalore</strong></td></tr>
+          <tr><td><strong>Basveshwara Urban Bank, Shiralakoppa</strong></td></tr>
         </tbody>
       </table>
     </div>
@@ -1285,23 +1290,22 @@
           <tr>
             <th>Partner</th>
             <th>Focus Area</th>
-            <th>Website</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td><strong>Cisco Systems Networks</strong></td><td>Network Switches, Routers, Security Products</td><td><a href="http://www.cisco.com" target="_blank" style="color:var(--cyan); font-weight:600; text-decoration:underline;">www.cisco.com</a></td></tr>
-          <tr><td><strong>HP India (Network)</strong></td><td>Entire Range of Networking Products</td><td><a href="http://www.hp.com" target="_blank" style="color:var(--cyan); font-weight:600; text-decoration:underline;">www.hp.com</a></td></tr>
-          <tr><td><strong>Molex (India) Ltd.</strong></td><td>Network Cabling Solutions for Copper and Fiber Products</td><td>—</td></tr>
-          <tr><td><strong>Tyco India Ltd.</strong></td><td>Entire Range of AMP Passive and Active LAN Solutions</td><td>—</td></tr>
-          <tr><td><strong>D-Link India Ltd.</strong></td><td>Complete Range of Networking Products</td><td>—</td></tr>
-          <tr><td><strong>Sify Ltd.</strong></td><td>Leased Internet, VPN and MPLS-based WAN Connectivity Solutions, Data Center, Hosting, etc.</td><td><a href="http://www.sifycorp.com" target="_blank" style="color:var(--cyan); font-weight:600; text-decoration:underline;">www.sifycorp.com</a></td></tr>
-          <tr><td><strong>Ruckus Networks</strong></td><td>Most Admired Wireless Solutions</td><td><a href="http://ruckuswireless.com" target="_blank" style="color:var(--cyan); font-weight:600; text-decoration:underline;">ruckuswireless.com</a></td></tr>
-          <tr><td><strong>Cambium Networks</strong></td><td>Highly Reliable Backbone Wireless Solutions</td><td><a href="http://cambiumnetworks.com" target="_blank" style="color:var(--cyan); font-weight:600; text-decoration:underline;">cambiumnetworks.com</a></td></tr>
-          <tr><td><strong>MRO-TEK India Ltd.</strong></td><td>RAD Modems and Networking Products</td><td><a href="http://www.mrotek.com" target="_blank" style="color:var(--cyan); font-weight:600; text-decoration:underline;">www.mrotek.com</a></td></tr>
-          <tr><td><strong>Tacitine Consulting Pvt Ltd.</strong></td><td>Tacitine Range of Over-Edge Connectivity Solutions</td><td>—</td></tr>
-          <tr><td><strong>Honeywell India Ltd.</strong></td><td>Advanced CCTV Solutions for Multi-Location Requirements</td><td>—</td></tr>
-          <tr><td><strong>Hikvision India Pvt Ltd.</strong></td><td>Well-Known Analog and IP CCTV Solutions</td><td>—</td></tr>
-          <tr><td><strong>Netmagic IT Services P Ltd.</strong></td><td>NTT Group – Data Center Activity Partner</td><td>—</td></tr>
+          <tr><td><strong>Cisco Systems Networks</strong></td><td>Network Switches, Routers, Security Products</td></tr>
+          <tr><td><strong>HP India (Network)</strong></td><td>Entire Range of Networking Products</td></tr>
+          <tr><td><strong>Molex (India) Ltd.</strong></td><td>Network Cabling Solutions for Copper and Fiber Products</td></tr>
+          <tr><td><strong>Tyco India Ltd.</strong></td><td>Entire Range of AMP Passive and Active LAN Solutions</td></tr>
+          <tr><td><strong>D-Link India Ltd.</strong></td><td>Complete Range of Networking Products</td></tr>
+          <tr><td><strong>Sify Ltd.</strong></td><td>Leased Internet, VPN and MPLS-based WAN Connectivity Solutions, Data Center, Hosting, etc.</td></tr>
+          <tr><td><strong>Ruckus Networks</strong></td><td>Most Admired Wireless Solutions</td></tr>
+          <tr><td><strong>Cambium Networks</strong></td><td>Highly Reliable Backbone Wireless Solutions</td></tr>
+          <tr><td><strong>MRO-TEK India Ltd.</strong></td><td>RAD Modems and Networking Products</td></tr>
+          <tr><td><strong>Tacitine Consulting Pvt Ltd.</strong></td><td>Tacitine Range of Over-Edge Connectivity Solutions</td></tr>
+          <tr><td><strong>Honeywell India Ltd.</strong></td><td>Advanced CCTV Solutions for Multi-Location Requirements</td></tr>
+          <tr><td><strong>Hikvision India Pvt Ltd.</strong></td><td>Well-Known Analog and IP CCTV Solutions</td></tr>
+          <tr><td><strong>Netmagic IT Services P Ltd.</strong></td><td>NTT Group – Data Center Activity Partner</td></tr>
         </tbody>
       </table>
     </div>
