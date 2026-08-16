@@ -428,14 +428,14 @@
 
   /* ================= CONTACT ================= */
   .contact { 
-    padding: 20px 4vw; 
+    padding: 15px 4vw; 
     background: #EAD8C3; 
     border-top: 2px solid var(--navy);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 15px;
   }
   .contact-title {
     color: var(--navy);
@@ -444,8 +444,8 @@
     font-weight: 800;
     letter-spacing: 1px;
   }
-  .contact-row { display: flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 600; font-size: 0.95rem; }
-  .contact-row i { color: var(--navy); font-size: 1.1rem; }
+  .contact-row { display: flex; align-items: center; gap: 8px; color: var(--ink); font-weight: 600; font-size: 0.9rem; }
+  .contact-row i { color: var(--navy); font-size: 1rem; }
   .contact-row.email { word-break: break-all; }
   .contact-row a { color: var(--ink); text-decoration: none; transition: color 0.2s, transform 0.2s, text-shadow 0.2s; display: inline-block; }
   .contact-row a:hover { color: var(--navy); transform: translateY(-2px) scale(1.02); text-shadow: 0 0 10px rgba(11, 42, 107, 0.2); }
@@ -459,6 +459,19 @@
     .hero { flex-direction: column; text-align: center; }
     .hero-content { margin-bottom: 40px; }
     .hero-ctas { justify-content: center; }
+    
+    .contact {
+      flex-direction: column;
+      gap: 10px;
+      padding: 20px 4vw;
+    }
+    .contact-row {
+      justify-content: center;
+      text-align: center;
+    }
+    .promise {
+      margin-top: 5px;
+    }
   }
   @media (max-width: 640px) {
     nav .links { display: none; }
@@ -611,6 +624,13 @@
   }
   .styled-table tbody tr:hover {
     background-color: #f1f7fc;
+  }
+
+  /* Fix fixed backgrounds on mobile devices */
+  @media (hover: none) and (pointer: coarse), (max-width: 900px) {
+    .services, .testimonials {
+      background-attachment: scroll !important;
+    }
   }
 </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
