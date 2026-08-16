@@ -404,6 +404,44 @@
   .logo-row img { height: 80px; max-width: 210px; object-fit: contain; filter: grayscale(15%); opacity: 0.9; transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease; cursor: pointer; }
   .logo-row img:hover { transform: scale(1.15); filter: grayscale(0%); opacity: 1; }
 
+  /* ================= MARQUEE ================= */
+  .marquee-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    padding: 10px 0;
+  }
+  .marquee-track {
+    display: inline-flex;
+    gap: 40px;
+    align-items: center;
+    animation: marquee 45s linear infinite;
+    padding-right: 40px; /* Fixes jump offset by accounting for last gap */
+  }
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+  .marquee-track img {
+    height: 85px; 
+    max-width: 230px;
+    object-fit: contain;
+    filter: grayscale(15%);
+    opacity: 0.9;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+  }
+  .marquee-track img:hover {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
   /* ================= ABOUT / JOURNEY (added) ================= */
   .about { padding: 70px 6vw; background: var(--bg); border-top: 1px solid rgba(41, 182, 246, 0.1); }
   .about-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 1fr; gap: 50px; align-items: start; }
@@ -1213,14 +1251,42 @@
     <div class="eyebrow" style="color:var(--navy); border-color:var(--navy);">OUR CLIENTS</div>
     <h2 style="color:var(--navy); font-size:clamp(1.4rem,2.6vw,1.9rem);">Delivering Success to Every Client</h2>
   </div>
-  <div class="logo-row reveal" style="margin-bottom: 30px;">
-    <img src="https://solvent-network-solutions1.netlify.app/assets/non bg/apex.png" alt="Apex Bank">
-    <img src="https://solvent-network-solutions1.netlify.app/assets/non bg/jnnce.jpg" alt="JNNCE">
-    <img src="https://solvent-network-solutions1.netlify.app/assets/non bg/nandi.jpg" alt="Nandi Sugars">
-    <img src="https://solvent-network-solutions1.netlify.app/assets/non bg/nes.jpg" alt="NES">
-    <img src="https://solvent-network-solutions1.netlify.app/assets/non bg/shantala.jpg" alt="Shantala">
-    <img src="https://solvent-network-solutions1.netlify.app/assets/non bg/ballary dcc.jpg" alt="Ballary DCC">
-    <img src="https://solvent-network-solutions1.netlify.app/assets/non bg/tls.png" alt="TLS">
+  <div class="marquee-wrapper reveal" style="margin-bottom: 30px;">
+    <div class="marquee-track">
+      <!-- SET 1 -->
+      <img src="https://solvent-network-solutions1.netlify.app/assets/non bg/apex.png" alt="Apex Bank">
+      <img src="https://solvent-network-solutions1.netlify.app/assets/non bg/jnnce.jpg" alt="JNNCE">
+      <img src="https://solvent-network-solutions1.netlify.app/assets/non bg/nandi.jpg" alt="Nandi Sugars">
+      <img src="https://solvent-network-solutions1.netlify.app/assets/non bg/nes.jpg" alt="NES">
+      <img src="https://solvent-network-solutions1.netlify.app/assets/non bg/shantala.jpg" alt="Shantala">
+      <img src="https://solvent-network-solutions1.netlify.app/assets/non bg/ballary dcc.jpg" alt="Ballary DCC">
+      <img src="https://solvent-network-solutions1.netlify.app/assets/non bg/tls.png" alt="TLS">
+      <img src="assets/Screenshot%20from%202026-08-16%2012-41-32.png" alt="Client 1">
+      <img src="assets/Screenshot%20from%202026-08-16%2012-43-35.png" alt="Client 2">
+      <img src="assets/Screenshot%20from%202026-08-16%2012-45-52.png" alt="Client 3">
+      <img src="assets/Screenshot%20from%202026-08-16%2012-48-33.png" alt="Client 4">
+      <img src="assets/Screenshot%20from%202026-08-16%2012-49-55.png" alt="Client 5">
+      <img src="assets/Screenshot%20from%202026-08-16%2012-50-34.png" alt="Client 6">
+      <img src="assets/Screenshot%20from%202026-08-16%2012-53-53.png" alt="Client 7">
+      <img src="assets/Screenshot%20from%202026-08-16%2012-54-35.png" alt="Client 8">
+
+      <!-- SET 2 (Duplicate for infinite scrolling) -->
+      <img src="https://solvent-network-solutions1.netlify.app/assets/non bg/apex.png" alt="Apex Bank">
+      <img src="https://solvent-network-solutions1.netlify.app/assets/non bg/jnnce.jpg" alt="JNNCE">
+      <img src="https://solvent-network-solutions1.netlify.app/assets/non bg/nandi.jpg" alt="Nandi Sugars">
+      <img src="https://solvent-network-solutions1.netlify.app/assets/non bg/nes.jpg" alt="NES">
+      <img src="https://solvent-network-solutions1.netlify.app/assets/non bg/shantala.jpg" alt="Shantala">
+      <img src="https://solvent-network-solutions1.netlify.app/assets/non bg/ballary dcc.jpg" alt="Ballary DCC">
+      <img src="https://solvent-network-solutions1.netlify.app/assets/non bg/tls.png" alt="TLS">
+      <img src="assets/Screenshot%20from%202026-08-16%2012-41-32.png" alt="Client 1">
+      <img src="assets/Screenshot%20from%202026-08-16%2012-43-35.png" alt="Client 2">
+      <img src="assets/Screenshot%20from%202026-08-16%2012-45-52.png" alt="Client 3">
+      <img src="assets/Screenshot%20from%202026-08-16%2012-48-33.png" alt="Client 4">
+      <img src="assets/Screenshot%20from%202026-08-16%2012-49-55.png" alt="Client 5">
+      <img src="assets/Screenshot%20from%202026-08-16%2012-50-34.png" alt="Client 6">
+      <img src="assets/Screenshot%20from%202026-08-16%2012-53-53.png" alt="Client 7">
+      <img src="assets/Screenshot%20from%202026-08-16%2012-54-35.png" alt="Client 8">
+    </div>
   </div>
 
   <details class="expandable-wrapper reveal" style="max-width: 1100px;">
@@ -1268,14 +1334,40 @@
     <div class="eyebrow" style="color:var(--navy); border-color:var(--navy);">PARTNERS</div>
     <h2 style="color:var(--navy); font-size:clamp(1.4rem,2.6vw,1.9rem);">Our Strategic Alliances</h2>
   </div>
-  <div class="logo-row reveal" style="margin-bottom: 30px;">
-    <img src="https://solvent-network-solutions1.netlify.app/assets/strategic/Hikvision-Logo-500x281.png" alt="Hikvision">
-    <img src="https://solvent-network-solutions1.netlify.app/assets/strategic/cisco.png" alt="Cisco">
-    <img src="https://solvent-network-solutions1.netlify.app/assets/strategic/Dlink.png" alt="D-Link">
-    <img src="https://solvent-network-solutions1.netlify.app/assets/strategic/hp.jpg" alt="HP">
-    <img src="https://solvent-network-solutions1.netlify.app/assets/strategic/ruckus.svg" alt="Ruckus">
-    <img src="https://solvent-network-solutions1.netlify.app/assets/strategic/sify.png" alt="Sify">
-    <img src="https://solvent-network-solutions1.netlify.app/assets/strategic/cambium.png" alt="Cambium">
+  <div class="marquee-wrapper reveal" style="margin-bottom: 30px;">
+    <div class="marquee-track">
+      <!-- SET 1 -->
+      <img src="https://solvent-network-solutions1.netlify.app/assets/strategic/Hikvision-Logo-500x281.png" alt="Hikvision">
+      <img src="https://solvent-network-solutions1.netlify.app/assets/strategic/cisco.png" alt="Cisco">
+      <img src="https://solvent-network-solutions1.netlify.app/assets/strategic/Dlink.png" alt="D-Link">
+      <img src="https://solvent-network-solutions1.netlify.app/assets/strategic/hp.jpg" alt="HP">
+      <img src="https://solvent-network-solutions1.netlify.app/assets/strategic/ruckus.svg" alt="Ruckus">
+      <img src="https://solvent-network-solutions1.netlify.app/assets/strategic/sify.png" alt="Sify">
+      <img src="https://solvent-network-solutions1.netlify.app/assets/strategic/cambium.png" alt="Cambium">
+      <img src="assets/new12-58-42.png" alt="Partner 1">
+      <img src="assets/new12-59-53.png" alt="Partner 2">
+      <img src="assets/new13-00-42.png" alt="Partner 3">
+      <img src="assets/new13-01-27.png" alt="Partner 4">
+      <img src="assets/new13-02-15.png" alt="Partner 5">
+      <img src="assets/new13-03-05.png" alt="Partner 6">
+      <img src="assets/new13-03-41.png" alt="Partner 7">
+
+      <!-- SET 2 (Duplicate for infinite scrolling) -->
+      <img src="https://solvent-network-solutions1.netlify.app/assets/strategic/Hikvision-Logo-500x281.png" alt="Hikvision">
+      <img src="https://solvent-network-solutions1.netlify.app/assets/strategic/cisco.png" alt="Cisco">
+      <img src="https://solvent-network-solutions1.netlify.app/assets/strategic/Dlink.png" alt="D-Link">
+      <img src="https://solvent-network-solutions1.netlify.app/assets/strategic/hp.jpg" alt="HP">
+      <img src="https://solvent-network-solutions1.netlify.app/assets/strategic/ruckus.svg" alt="Ruckus">
+      <img src="https://solvent-network-solutions1.netlify.app/assets/strategic/sify.png" alt="Sify">
+      <img src="https://solvent-network-solutions1.netlify.app/assets/strategic/cambium.png" alt="Cambium">
+      <img src="assets/new12-58-42.png" alt="Partner 1">
+      <img src="assets/new12-59-53.png" alt="Partner 2">
+      <img src="assets/new13-00-42.png" alt="Partner 3">
+      <img src="assets/new13-01-27.png" alt="Partner 4">
+      <img src="assets/new13-02-15.png" alt="Partner 5">
+      <img src="assets/new13-03-05.png" alt="Partner 6">
+      <img src="assets/new13-03-41.png" alt="Partner 7">
+    </div>
   </div>
 
   <details class="expandable-wrapper reveal" style="max-width: 1100px;">
